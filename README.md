@@ -1,4 +1,4 @@
-# rux-test
+# Nitrox Launcher
 
 ## Project setup
 ```
