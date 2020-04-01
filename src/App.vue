@@ -12,7 +12,7 @@
       <nav class="col-md-3 d-md-block sidebar disable-select p-0">
         <div class="sidebar-sticky d-flex align-items-start flex-column">
           <ul class="nav w-100 flex-column mb-auto px-3">
-            <li class="nav-item p-4">
+            <li class="nav-item p-4 mb-3">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.71 65.52" width="92px" fill="white" class="nitrox-logo">
                 <title>Nitrox</title>
                 <g id="Layer_2" data-name="Layer 2">
@@ -69,8 +69,8 @@
           <ul class="nav w-100 bg-darkest px-3">
             <div class="d-flex w-100">
               <div class="px-3 pb-3 pt-3 mr-1 h-small">
-                <h6>Version</h6>
-                <p class="mb-0 font-14" id="version-number">1.0.0</p>
+                <h6 class="mb-1 font-11 opacity-5">Version</h6>
+                <p class="mb-0 font-14 opacity-75" id="version-number">1.0.0</p>
               </div>
               <div class="ml-auto d-none">
                 <a class="nav-link sm-btn" href="#" data-toggle="tooltip" data-placement="top" title="Check for updates">

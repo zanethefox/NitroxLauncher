@@ -59,12 +59,11 @@ export default {
 
           <ul class="nav w-100">
             <div class="d-flex w-100">
-              <div class="px-3 mr-1 pb-3 h-small">
-                <h6>Version</h6>
-                <p class="mb-0 font-14" id="version-number">1.0.0</p>
+              <div class="px-3 pb-3 pt-3 mr-1 h-small">
+                <h6 class="mb-1 font-11 opacity-5">Version</h6>
+                <p class="mb-0 font-14 opacity-75" id="version-number">1.0.0</p>
               </div>
             </div>
-
           </ul>
         </div>
       </nav>
@@ -74,13 +73,30 @@ export default {
           <div class="col-md-8 col-lg-8 ml-auto px-4">
             <!-- Modal content -->
             <slot name="body">
+              <div class="pt-3">
+                <h6>Subnautica Installation</h6>
+                <div class="bg-on-dark-variant p-4 mt-3 rounded-lg">
+                  <div class="media">
+                    <img src="../assets/img/subnautica-icon.jpg" class="mr-3 img-fluid rounded disable-select" alt="Subnautica Icon" width="64px">
+                    <div class="media-body mt-1">
+                      <h5 class="mt-0 mb-1 font-400">Subnautica</h5>
+                      <p class="font-14 opacity-75 m-0">D:\Games\Epic Games\Subnautica</p>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="mt-4">Incorrect installation path?</p>
+                <button type="button" name="button" class="btn btn-primary font-16 btn-lg px-5">Browse</button>
+              </div>
+
+
             </slot>
           </div>
           <div class="col-md-1">
             <button type="button" class="btn sm-btn btn-icon position-fixed" @click="close" aria-label="Close modal" style="right: 32px;">
               <span class="material-icons">close</span>
             </button>
-            <h6 class="esc-text disable-select">ESC</h6>
+            <h6 class="esc-text disable-select opacity-5">ESC</h6>
           </div>
         </div>
 
@@ -109,7 +125,7 @@ export default {
 
 .modal-fade-enter-active,
 .modal-fade-leave-active {
-  transition: all .4s cubic-bezier(1, -0.4, 0, 1.4);
+  transition: all .5s cubic-bezier(1, -0.4, 0, 1.4);
 }
 
 .modal-backdrop {

@@ -119,6 +119,11 @@ h6 {
   opacity: .75;
 }
 
+
+.font-400 {
+  font-weight: 400;
+}
+
 .font-11 {
   font-size: 11px;
 }
@@ -127,6 +132,13 @@ h6 {
   font-size: 14px;
 }
 
+.font-16 {
+  font-size: 16px;
+}
+
+.opacity-5 {
+  opacity: .5;
+}
 
 .opacity-75 {
   opacity: .75;
@@ -355,7 +367,12 @@ main {
  * Buttons
  */
 .btn {
-  border-radius: 0px
+  border-radius: 3px;
+}
+
+.btn-secondary {
+  background: #515255;
+  border-color: #515255;
 }
 
 /*
@@ -516,7 +533,24 @@ main {
 
 .home-image {
   background: url('../img/preview.jpg');
-  min-height: 420px;
+  min-height: 360px;
   background-position: center;
   background-size: cover;
+}
+
+.line {
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.social {
+  padding: 1rem;
+}
+
+.social .nav-item .nav-link img {
+  opacity: .5;
+  transition: all ease-in-out .125s;
+}
+
+.social .nav-item a:hover img {
+  opacity: 1;
 }
