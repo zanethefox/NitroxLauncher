@@ -18,13 +18,6 @@ export default {
   this.$on('hook:destroyed', () => {
     document.removeEventListener('keyup', close);
   });
-
-  // Activate the modal when the component is mounted.
-  this.activate();
-  this.$on('hook:destroyed', () => {
-    // Deactivate when the component is destroyed.
-    this.deactivate();
-  });
 },
 };
 </script>

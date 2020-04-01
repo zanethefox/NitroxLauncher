@@ -21,7 +21,7 @@
 
         </div>
         <div class="col-md-4 start-game-buttons">
-          <a class="btn btn-primary btn-lg text-uppercase btn-block" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica multiplayer">
+          <a class="btn btn-primary btn-lg text-uppercase btn-block" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica multiplayer" >
             Play
             <h6 class="pt-0 mb-1 text-uppercase">multiplayer</h6>
           </a>

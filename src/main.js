@@ -68,5 +68,6 @@ if (process.platform === 'darwin') {
         var windowControls = document.getElementById("window-controls");
         windowControls.classList.add("is-mac");
   } else {
-    windowControls.classList.add("is-other");
+    var windowControlsOther = document.getElementById("window-controls");
+    windowControlsOther.classList.add("is-other");
   }

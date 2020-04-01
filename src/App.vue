@@ -104,6 +104,7 @@ export default {
     data () {
       return {
         isSettingsModalVisible: false,
+        isLaunchModalVisible: false,
       };
     },
     methods: {
