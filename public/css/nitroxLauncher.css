@@ -530,6 +530,9 @@ main {
   }
 }
 
+.game-modal-backdrop .modal {
+  background: url('../img/preview.jpg');
+}
 
 .home-image {
   background: url('../img/preview.jpg');

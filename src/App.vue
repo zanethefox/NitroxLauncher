@@ -8,6 +8,8 @@
           @close="closeSettingsModal"
         />
 
+
+
     <div id="nav">
       <nav class="col-md-3 d-md-block sidebar disable-select p-0">
         <div class="sidebar-sticky d-flex align-items-start flex-column">
@@ -99,12 +101,11 @@ export default {
   name: 'Home',
   components: {
     TitleBar,
-    SettingsModal,
+    SettingsModal
   },
     data () {
       return {
         isSettingsModalVisible: false,
-        isLaunchModalVisible: false,
       };
     },
     methods: {

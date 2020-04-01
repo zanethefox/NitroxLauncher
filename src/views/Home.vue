@@ -1,5 +1,11 @@
 <template>
   <div class="home">
+
+    <launch-game-modal
+          v-show="isLaunchGameModalVisible"
+          @close="closeLaunchGameModal"
+        />
+
     <main role="main" class="col-md-9 col-lg-9 ml-auto pl-4 ">
       <div class="home-image d-flex">
         <img src="../assets/img/subnauticaLogo.png" alt="Subnautica Logo" class="img-fluid m-auto disable-select">
@@ -21,7 +27,7 @@
 
         </div>
         <div class="col-md-4 start-game-buttons">
-          <a class="btn btn-primary btn-lg text-uppercase btn-block" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica multiplayer" >
+          <a class="btn btn-primary btn-lg text-uppercase btn-block" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica multiplayer" @click="showLaunchGameModal">
             Play
             <h6 class="pt-0 mb-1 text-uppercase">multiplayer</h6>
           </a>
@@ -109,3 +115,28 @@
     </main>
   </div>
 </template>
+<script>
+import LaunchGameModal from '@/components/LaunchGameModal.vue';
+
+export default {
+  name: 'Home',
+  components: {
+    LaunchGameModal,
+  },
+    data () {
+      return {
+        isSettingsModalVisible: false,
+        isLaunchGameModalVisible: false,
+      };
+    },
+    methods: {
+      showLaunchGameModal() {
+        this.isLaunchGameModalVisible = true;
+      },
+      closeLaunchGameModal() {
+        this.isLaunchGameModalVisible = false;
+      }
+    },
+};
+
+</script>
