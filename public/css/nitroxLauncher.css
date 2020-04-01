@@ -132,19 +132,19 @@ h6 {
 }
 
 .bg-darkest {
-  background: #1A1A1D;
+  background: #1A1A1D!important;
 }
 
 .bg-darker {
-  background: #1F1F22;
+  background: #1F1F22!important;
 }
 
 .bg-on-dark {
-  background: #28292C;
+  background: #28292C!important;
 }
 
 .bg-on-dark-variant {
-  background: #3D3E41;
+  background: #3D3E41!important;
 }
 
 .disable-select {
@@ -163,6 +163,7 @@ h6 {
   background: #1F1F22;
   z-index: 1;
   top: 0;
+  -webkit-app-region: drag
 }
 
 #titlebar {
@@ -186,6 +187,11 @@ h6 {
   top: 0;
   right: 0;
   height: 100%;
+}
+
+#window-controls.is-mac {
+  display: none;
+  visibility: hidden;
 }
 
 #window-controls .button {
@@ -325,7 +331,6 @@ main {
 ::-webkit-scrollbar-track {
   background: none;        /* color of the tracking area */
   border: 4px solid #28292C;  /* creates padding around scroll thumb */
-
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0,0,0,.5);    /* color of the scroll thumb */
@@ -377,7 +382,7 @@ main {
   transform: translateY(1px);
 }
 
-.sidebar .nav-link {
+.sidebar .nav-link, .btn-icon {
   font-size: 14px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.5);
@@ -385,11 +390,27 @@ main {
   border-radius: 6px;
 }
 
-.sidebar .nav-link .material-icons {
+.sidebar .nav-link .material-icons, .btn-icon {
   margin-right: 4px;
   color: rgba(255, 255, 255, 0.5);
   vertical-align: middle;
   transition: color ease-in-out .075s;
+}
+
+.btn-icon, .btn-icon.sm-btn {
+  margin-right: 0px;
+  line-height: 0px;
+  border-radius: 6px;
+  transition: color ease-in-out .075s, background-color ease-in-out .075s;
+}
+
+.btn-icon:active, .btn-icon:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-icon:active {
+  transform: translateY(1px);
 }
 
 .sidebar .nav-link svg {
@@ -398,8 +419,11 @@ main {
 
 .sidebar .nav-link.router-link-exact-active,
 .sidebar .nav-link.router-link-exact-active:hover,
-.sidebar .nav-link.router-link-exact-active:hover .material-icons {
+.sidebar .nav-link.router-link-exact-active:hover .material-icons,
+.btn-icon:hover .material-icons  {
   color: #fff;
+  transition: color ease-in-out .075s;
+
 }
 
 .sidebar .nav-link.router-link-exact-active .material-icons {
@@ -407,7 +431,8 @@ main {
 }
 
 .sidebar .nav-link:hover .material-icons,
-.sidebar .nav-link:hover {
+.sidebar .nav-link:hover,
+.btn-icon:hover {
   color: rgba(255, 255, 255, 0.75);
 }
 
@@ -464,4 +489,12 @@ main {
   .sidebar .p-4 {
     padding: 0px !important;
   }
+}
+
+
+.home-image {
+  background: url('../img/preview.jpg');
+  min-height: 420px;
+  background-position: center;
+  background-size: cover;
 }

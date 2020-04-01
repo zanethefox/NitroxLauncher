@@ -3,6 +3,11 @@
 
     <title-bar/>
 
+    <settings-modal
+          v-show="isSettingsModalVisible"
+          @close="closeSettingsModal"
+        />
+
     <div id="nav">
       <nav class="col-md-3 d-md-block sidebar disable-select">
         <div class="sidebar-sticky d-flex align-items-start flex-column">
@@ -53,17 +58,17 @@
                 <span class="h-small">Patch notes</span>
               </router-link>
             </li>
-            <li class="nav-item mb-1">
-              <router-link to="/settings" class="nav-link">
+            <li class="nav-item mb-1" >
+              <a class="nav-link" @click="showSettingsModal">
                 <span class="material-icons">settings</span>
                 <span class="h-small">Settings</span>
-              </router-link>
+              </a>
             </li>
           </ul>
 
           <ul class="nav w-100 bg-darkest">
             <div class="d-flex w-100">
-              <div class="px-3 mr-1 h-small">
+              <div class="px-3 pb-4 mr-1 h-small">
                 <h6>Version</h6>
                 <p class="mb-0 font-11" id="version-number">1.0.0</p>
               </div>
@@ -84,12 +89,28 @@
 
 <script>
 import TitleBar from '@/components/TitleBar.vue'
+import SettingsModal from './components/SettingsModal.vue';
+
 
 export default {
   name: 'Home',
   components: {
-    TitleBar
-  }
-}
+    TitleBar,
+    SettingsModal,
+  },
+    data () {
+      return {
+        isSettingsModalVisible: false,
+      };
+    },
+    methods: {
+      showSettingsModal() {
+        this.isSettingsModalVisible = true;
+      },
+      closeSettingsModal() {
+        this.isSettingsModalVisible = false;
+      }
+    },
+};
 
 </script>

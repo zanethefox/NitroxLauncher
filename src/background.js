@@ -34,7 +34,6 @@ function createLoadingWindow() {
     loadingWindow.loadURL('app://./loading.html')
   }
 
-
   loadingWindow.on('closed', () => loadingWindow = null);
   loadingWindow.webContents.on('did-finish-load', () => {
     loadingWindow.show();
@@ -50,6 +49,7 @@ function createWindow () {
     minWidth: 1024,
     minHeight: 612,
     frame: false,
+    titleBarStyle: 'hidden',
     backgroundColor: '#28292C',
     webPreferences: {
       nodeIntegration: true
@@ -74,7 +74,6 @@ function createWindow () {
   win.webContents.on('did-finish-load', () => {
   /// when the content has loaded, hide the loading screen and show the main window
   if (loadingWindow) {
-    console.log("Hello from the other side")
     loadingWindow.close();
   }
   win.show();
@@ -97,6 +96,10 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+app.on('window-all-closed', () => {
+  win = null
+});
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

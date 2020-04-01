@@ -62,3 +62,11 @@ function handleWindowControls() {
         }
     }
 }
+
+// Detect which OS is used
+if (process.platform === 'darwin') {
+        var windowControls = document.getElementById("window-controls");
+        windowControls.classList.add("is-mac");
+  } else {
+    windowControls.classList.add("is-other");
+  }
