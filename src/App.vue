@@ -9,9 +9,9 @@
         />
 
     <div id="nav">
-      <nav class="col-md-3 d-md-block sidebar disable-select">
+      <nav class="col-md-3 d-md-block sidebar disable-select p-0">
         <div class="sidebar-sticky d-flex align-items-start flex-column">
-          <ul class="nav w-100 flex-column mb-auto">
+          <ul class="nav w-100 flex-column mb-auto px-3">
             <li class="nav-item p-4">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.71 65.52" width="92px" fill="white" class="nitrox-logo">
                 <title>Nitrox</title>
@@ -49,7 +49,7 @@
                 <span class="h-small">Server</span>
               </router-link>
             </li>
-            <li class="nav-item mb-1">
+            <li class="nav-item mb-1 d-none">
               <router-link to="/patchnotes" class="nav-link">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                   <path fill="currentColor"
@@ -66,13 +66,13 @@
             </li>
           </ul>
 
-          <ul class="nav w-100 bg-darkest">
+          <ul class="nav w-100 bg-darkest px-3">
             <div class="d-flex w-100">
-              <div class="px-3 pb-4 mr-1 h-small">
+              <div class="px-3 pb-3 pt-3 mr-1 h-small">
                 <h6>Version</h6>
-                <p class="mb-0 font-11" id="version-number">1.0.0</p>
+                <p class="mb-0 font-14" id="version-number">1.0.0</p>
               </div>
-              <div class="ml-auto">
+              <div class="ml-auto d-none">
                 <a class="nav-link sm-btn" href="#" data-toggle="tooltip" data-placement="top" title="Check for updates">
                   <span class="material-icons">update</span>
                 </a>
@@ -83,7 +83,10 @@
         </div>
       </nav>
     </div>
+
     <router-view/>
+
+
   </div>
 </template>
 

@@ -119,6 +119,15 @@ h6 {
   opacity: .75;
 }
 
+.font-11 {
+  font-size: 11px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+
 .opacity-75 {
   opacity: .75;
 }
@@ -161,7 +170,7 @@ h6 {
   width: 100%;
   /*Compensate for body 1px border*/
   background: #1F1F22;
-  z-index: 1;
+  z-index: 9999;
   top: 0;
   -webkit-app-region: drag
 }
@@ -423,7 +432,6 @@ main {
 .btn-icon:hover .material-icons  {
   color: #fff;
   transition: color ease-in-out .075s;
-
 }
 
 .sidebar .nav-link.router-link-exact-active .material-icons {
@@ -438,6 +446,20 @@ main {
 
 .sidebar .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar .nav-link {
+  cursor: pointer;
+}
+
+.modal .sidebar .nav-link.active {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.modal .sidebar .nav-link.active:hover {
+  color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .sidebar-heading {

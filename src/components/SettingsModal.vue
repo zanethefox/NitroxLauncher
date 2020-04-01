@@ -6,6 +6,26 @@ export default {
       this.$emit('close');
     },
   },
+  mounted() {
+  const close = (e) => {
+    const ESC = 27;
+    if (e.keyCode !== ESC) return;
+    this.$emit('close');
+  };
+  // Close the modal when the
+  // user presses the ESC key.
+  document.addEventListener('keyup', close);
+  this.$on('hook:destroyed', () => {
+    document.removeEventListener('keyup', close);
+  });
+
+  // Activate the modal when the component is mounted.
+  this.activate();
+  this.$on('hook:destroyed', () => {
+    // Deactivate when the component is destroyed.
+    this.deactivate();
+  });
+},
 };
 </script>
 <template>
@@ -15,12 +35,13 @@ export default {
 
       <nav class="col-md-3 d-md-block sidebar modal-menu disable-select">
         <div class="sidebar-sticky d-flex align-items-start flex-column">
+          <!-- Modal navigation -->
           <ul class="nav w-100 flex-column mb-auto">
             <li class="nav-item mt-4 mb-1 pl-3">
               <h6>Nitrox settings</h6>
             </li>
             <li class="nav-item mb-1">
-              <a class="nav-link">
+              <a class="nav-link active">
                 <span class="h-small">General</span>
               </a>
             </li>
@@ -38,9 +59,9 @@ export default {
 
           <ul class="nav w-100">
             <div class="d-flex w-100">
-              <div class="px-3 mr-1 pb-4 h-small">
+              <div class="px-3 mr-1 pb-3 h-small">
                 <h6>Version</h6>
-                <p class="mb-0 font-11" id="version-number">1.0.0</p>
+                <p class="mb-0 font-14" id="version-number">1.0.0</p>
               </div>
             </div>
 
@@ -48,28 +69,18 @@ export default {
         </div>
       </nav>
 
-
       <section class="modal-body" id="modalDescription">
         <div class="row m-0 p-0">
           <div class="col-md-8 col-lg-8 ml-auto px-4">
+            <!-- Modal content -->
             <slot name="body">
-              <h1>I'm the default body!</h1>
-              <h1>I'm the default body!</h1>
-              <h1>I'm the default body!</h1>
-              <h1>I'm the default body!</h1>
-              <h1>I'm the default body!</h1>
-              <h1>I'm the default body!</h1>
-              <h1>I'm the default body!</h1>
-              <h1>I'm the default body!</h1>
-              <h1>I'm the default body!</h1>
-              <h1>I'm the default body!</h1>
-              <h1>I'm the default body!</h1>
             </slot>
           </div>
           <div class="col-md-1">
             <button type="button" class="btn sm-btn btn-icon position-fixed" @click="close" aria-label="Close modal" style="right: 32px;">
               <span class="material-icons">close</span>
             </button>
+            <h6 class="esc-text disable-select">ESC</h6>
           </div>
         </div>
 
@@ -79,7 +90,13 @@ export default {
 </transition>
 </template>
 <style>
-
+.esc-text {
+  position: fixed;
+  top: 85px;
+  right: 43px;
+  letter-spacing: 0.5px;
+  font-size: 10px;
+}
 .modal .sidebar {
   background: #28292C;
 }
@@ -101,7 +118,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #1F1F22;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,6 +163,4 @@ export default {
   position: relative;
   padding: 20px 10px;
 }
-
-
 </style>
