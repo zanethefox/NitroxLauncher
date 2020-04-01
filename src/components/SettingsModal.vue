@@ -67,7 +67,7 @@ export default {
             </slot>
           </div>
           <div class="col-md-1">
-            <button type="button" class="btn sm-btn btn-icon position-fixed" @click="close" aria-label="Close modal">
+            <button type="button" class="btn sm-btn btn-icon position-fixed" @click="close" aria-label="Close modal" style="right: 32px;">
               <span class="material-icons">close</span>
             </button>
           </div>
