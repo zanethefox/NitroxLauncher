@@ -8,8 +8,6 @@
           @close="closeSettingsModal"
         />
 
-
-
     <div id="nav">
       <nav class="col-md-3 d-md-block sidebar disable-select p-0">
         <div class="sidebar-sticky d-flex align-items-start flex-column">
@@ -93,30 +91,31 @@
 </template>
 
 <script>
-
 import TitleBar from '@/components/TitleBar.vue'
 import SettingsModal from './components/SettingsModal.vue';
 
-
 export default {
   name: 'Home',
+
   components: {
     TitleBar,
     SettingsModal
   },
-    data () {
-      return {
-        isSettingsModalVisible: false,
-      };
-    },
-    methods: {
-      showSettingsModal() {
-        this.isSettingsModalVisible = true;
-      },
-      closeSettingsModal() {
-        this.isSettingsModalVisible = false;
-      }
-    },
-};
 
+  data () {
+    return {
+      isSettingsModalVisible: false,
+    };
+  },
+
+  methods: {
+    showSettingsModal() {
+      this.isSettingsModalVisible = true;
+    },
+
+    closeSettingsModal() {
+      this.isSettingsModalVisible = false;
+    }
+  },
+};
 </script>

@@ -1,7 +1,6 @@
 <template>
   <div class="server">
     <main role="main" class="col-md-9 col-lg-9 ml-auto px-4">
-
       <div class="" v-if="!this.isServerStarted">
         <h1>This is a server page</h1>
         <a class="btn btn-primary" @click.prevent="toggleServer()">
@@ -27,6 +26,7 @@ export default {
       isServerStarted: false,
     };
   },
+
   methods: {
     toggleServer() {
       this.isServerStarted = !this.isServerStarted
