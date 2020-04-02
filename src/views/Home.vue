@@ -134,6 +134,9 @@ export default {
     methods: {
       showLaunchGameModal() {
         this.isLaunchGameModalVisible = true;
+        setTimeout(() => {
+          this.isLaunchGameModalVisible = false;
+        }, 2000)
       },
       closeLaunchGameModal() {
         this.isLaunchGameModalVisible = false;

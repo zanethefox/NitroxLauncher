@@ -136,38 +136,5 @@ export default {
   border-radius: 8px
 }
 
-.modal::-webkit-scrollbar-track {
-  background: none;
-  /* color of the tracking area */
-  border: 4px solid #333437;
-  /* creates padding around scroll thumb */
-}
 
-.modal::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, .5);
-  /* color of the scroll thumb */
-  border-radius: 20px;
-  /* roundness of the scroll thumb */
-  border: 4px solid #333437;
-  /* creates padding around scroll thumb */
-}
-
-.modal-header,
-.modal-footer {
-  padding: 15px;
-  display: flex;
-}
-
-.modal-header {
-  justify-content: space-between;
-}
-
-.modal-footer {
-  justify-content: flex-end;
-}
-
-.modal-body {
-  position: relative;
-  padding: 20px 10px;
-}
 </style>

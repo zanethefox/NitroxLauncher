@@ -1,102 +1,133 @@
 <script>
 export default {
   name: 'SettingsModal',
+
+  data () {
+    return {
+      settingsActiveTab: "general"
+    }
+  },
+
   methods: {
     close() {
       this.$emit('close');
     },
+
+    settingsSwitchTab(tab) {
+      this.settingsActiveTab = tab;
+    },
   },
+
   mounted() {
-  const close = (e) => {
-    const ESC = 27;
-    if (e.keyCode !== ESC) return;
-    this.$emit('close');
-  };
-  // Close the modal when the
-  // user presses the ESC key.
-  document.addEventListener('keyup', close);
-  this.$on('hook:destroyed', () => {
-    document.removeEventListener('keyup', close);
-  });
-},
+    const close = (e) => {
+      const ESC = 27;
+      if (e.keyCode !== ESC) return;
+      this.$emit('close');
+    };
+    // Close the modal when the
+    // user presses the ESC key.
+    document.addEventListener('keyup', close);
+    this.$on('hook:destroyed', () => {
+      document.removeEventListener('keyup', close);
+    });
+  },
 };
 </script>
 <template>
-<transition name="modal-fade">
-  <div class="modal-backdrop">
-    <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+  <transition name="modal-fade">
+    <div class="modal-backdrop">
+      <div class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
 
-      <nav class="col-md-3 d-md-block sidebar modal-menu disable-select">
-        <div class="sidebar-sticky d-flex align-items-start flex-column">
-          <!-- Modal navigation -->
-          <ul class="nav w-100 flex-column mb-auto">
-            <li class="nav-item mt-4 mb-1 pl-3">
-              <h6>Nitrox settings</h6>
-            </li>
-            <li class="nav-item mb-1">
-              <a class="nav-link active">
-                <span class="h-small">General</span>
-              </a>
-            </li>
-            <li class="nav-item mb-1">
-              <a class="nav-link">
-                <span class="h-small">Server</span>
-              </a>
-            </li>
-            <li class="nav-item mb-1" >
-              <a class="nav-link">
-                <span class="h-small">Changelog</span>
-              </a>
-            </li>
-          </ul>
+        <!-- Modal navigation -->
+        <nav class="col-md-3 d-md-block sidebar modal-menu disable-select">
+          <div class="sidebar-sticky d-flex align-items-start flex-column">
+            <!-- Sidebar -->
+            <ul class="nav w-100 flex-column mb-auto">
+              <li class="nav-item mt-4 mb-1 pl-3">
+                <h6>Nitrox settings</h6>
+              </li>
+              <li class="nav-item mb-1">
+                <a :class="{ 'nav-link': true, active: (this.settingsActiveTab == 'general') }" @click.prevent="settingsSwitchTab('general')">
+                  <span class="h-small">General</span>
+                </a>
+              </li>
+              <li class="nav-item mb-1" @click.prevent="settingsSwitchTab('server')">
+                <a :class="{ 'nav-link': true, active: (this.settingsActiveTab == 'server') }" @click.prevent="settingsSwitchTab('server')">
+                  <span class="h-small">Server</span>
+                </a>
+              </li>
+              <li class="nav-item mb-1" @click.prevent="settingsSwitchTab('changelog')">
+                <a :class="{ 'nav-link': true, active: (this.settingsActiveTab == 'changelog') }" @click.prevent="settingsSwitchTab('changelog')">
+                  <span class="h-small">Changelog</span>
+                </a>
+              </li>
+            </ul>
 
-          <ul class="nav w-100">
-            <div class="d-flex w-100">
-              <div class="px-3 pb-3 pt-3 mr-1 h-small">
-                <h6 class="mb-1 font-11 opacity-5">Version</h6>
-                <p class="mb-0 font-14 opacity-75" id="version-number">1.0.0</p>
-              </div>
-            </div>
-          </ul>
-        </div>
-      </nav>
-
-      <section class="modal-body" id="modalDescription">
-        <div class="row m-0 p-0">
-          <div class="col-md-8 col-lg-8 ml-auto px-4">
-            <!-- Modal content -->
-            <slot name="body">
-              <div class="pt-3">
-                <h6>Subnautica Installation</h6>
-                <div class="bg-on-dark-variant p-4 mt-3 rounded-lg">
-                  <div class="media">
-                    <img src="../assets/img/subnautica-icon.jpg" class="mr-3 img-fluid rounded disable-select" alt="Subnautica Icon" width="64px">
-                    <div class="media-body mt-1">
-                      <h5 class="mt-0 mb-1 font-400">Subnautica</h5>
-                      <p class="font-14 opacity-75 m-0">D:\Games\Epic Games\Subnautica</p>
-                    </div>
-                  </div>
+            <!-- Version -->
+            <ul class="nav w-100">
+              <div class="d-flex w-100">
+                <div class="px-3 pb-3 pt-3 mr-1 h-small">
+                  <h6 class="mb-1 font-11 opacity-5">Version</h6>
+                  <p class="mb-0 font-14 opacity-75" id="version-number">1.0.0</p>
                 </div>
-
-                <p class="mt-4">Incorrect installation path?</p>
-                <button type="button" name="button" class="btn btn-primary font-16 btn-lg px-5">Browse</button>
               </div>
-
-
-            </slot>
+            </ul>
           </div>
-          <div class="col-md-1">
-            <button type="button" class="btn sm-btn btn-icon position-fixed" @click="close" aria-label="Close modal" style="right: 32px;">
-              <span class="material-icons">close</span>
-            </button>
-            <h6 class="esc-text disable-select opacity-5">ESC</h6>
-          </div>
-        </div>
+        </nav>
 
-      </section>
+      <!-- Modal content -->
+        <section class="modal-body" id="modalDescription">
+          <div class="row m-0 p-0">
+
+            <!-- Body -->
+            <div class="col-md-8 col-lg-8 ml-auto px-4">
+              <slot name="body">
+                <template v-if="this.settingsActiveTab == 'general'">
+                  <div class="settings-general pt-3">
+                    <h6>Subnautica Installation</h6>
+                    <div class="bg-on-dark-variant p-4 mt-3 rounded-lg">
+                      <div class="media">
+                        <img src="../assets/img/subnautica-icon.jpg" class="mr-3 img-fluid rounded disable-select" alt="Subnautica Icon" width="64px">
+                        <div class="media-body mt-1">
+                          <h5 class="mt-0 mb-1 font-400">Subnautica</h5>
+                          <p class="font-14 opacity-75 m-0">D:\Games\Epic Games\Subnautica</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="mt-4">Incorrect installation path?</p>
+                    <button type="button" name="button" class="btn btn-primary font-16 btn-lg px-5">Browse</button>
+                  </div>
+                </template>
+
+                <template v-if="this.settingsActiveTab == 'server'">
+                  <div class="settings-server pt-3">
+                    <h6>Server settings</h6>
+                  </div>
+                </template>
+
+                <template v-if="this.settingsActiveTab == 'changelog'">
+                  <div class="settings-changelog pt-3">
+                    <h6>Changelog</h6>
+                  </div>
+                </template>
+
+              </slot>
+            </div>
+
+            <!-- Close button -->
+            <div class="col-md-1">
+              <button type="button" class="btn sm-btn btn-icon position-fixed" @click="close" aria-label="Close modal" style="right: 32px;">
+                <span class="material-icons">close</span>
+              </button>
+              <h6 class="esc-text disable-select opacity-5">ESC</h6>
+            </div>
+          </div>
+
+        </section>
+      </div>
     </div>
-  </div>
-</transition>
+  </transition>
 </template>
 <style>
 .esc-text {
