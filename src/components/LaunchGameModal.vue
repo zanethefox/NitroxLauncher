@@ -7,22 +7,23 @@ export default {
     },
   },
   mounted() {
-  const close = (e) => {
-    const ESC = 27;
-    if (e.keyCode !== ESC) return;
-    this.$emit('close');
-  };
-  // Close the modal when the
-  // user presses the ESC key.
-  document.addEventListener('keyup', close);
-  this.$on('hook:destroyed', () => {
-    document.removeEventListener('keyup', close);
-  });
-},
+    const close = (e) => {
+      const ESC = 27;
+      if (e.keyCode !== ESC) return;
+      this.$emit('close');
+    };
+    // Close the modal when the
+    // user presses the ESC key.
+    document.addEventListener('keyup', close);
+    this.$on('hook:destroyed', () => {
+      document.removeEventListener('keyup', close);
+    });
+  },
 };
 </script>
 <template>
-<transition name="modal-fade">
+<transition name="modal-game">
+
   <div class="game-modal-backdrop align-items-start flex-column ">
     <div class="modal align-self-center shadow-lg" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDescription">
 
@@ -30,11 +31,11 @@ export default {
         <div class="row m-0 h-100">
           <div class="col-md-12 p-0 d-flex">
             <!-- Modal content -->
-              <div class="m-auto">
-                <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                   <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
-                </svg>
-              </div>
+            <div class="m-auto">
+              <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+              </svg>
+            </div>
           </div>
         </div>
 
@@ -46,17 +47,18 @@ export default {
 <style>
 .spinner {
   -webkit-animation: rotator 1.4s linear infinite;
-          animation: rotator 1.4s linear infinite;
+  animation: rotator 1.4s linear infinite;
 }
 
 @-webkit-keyframes rotator {
   0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(270deg);
-            transform: rotate(270deg);
+    transform: rotate(270deg);
   }
 }
 
@@ -66,36 +68,46 @@ export default {
   stroke-dasharray: 187;
   stroke-dashoffset: 0;
   -webkit-transform-origin: center;
-          transform-origin: center;
+  transform-origin: center;
   -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
-          animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+  animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
 }
 
 @-webkit-keyframes dash {
   0% {
     stroke-dashoffset: 187;
   }
+
   50% {
     stroke-dashoffset: 46.75;
     -webkit-transform: rotate(135deg);
-            transform: rotate(135deg);
+    transform: rotate(135deg);
   }
+
   100% {
-    stroke-dashoffset: 187;
+    stroke-dashoffset: 180;
     -webkit-transform: rotate(450deg);
-            transform: rotate(450deg);
+    transform: rotate(450deg);
   }
 }
 
-.modal-fade-enter,
-.modal-fade-leave-active {
+.modal-game-enter {
   opacity: 0;
   transform: scale(1.1);
 }
 
-.modal-fade-enter-active,
-.modal-fade-leave-active {
-  transition: all .5s cubic-bezier(1, -0.4, 0, 1.4);
+.modal-game-leave-active {
+  opacity: 0;
+}
+
+.modal-game-leave-active.game-modal-backdrop .modal {
+  transform: scale(0.9);
+  transition: all .25s ease-in-out;
+}
+
+.modal-game-enter-active,
+.modal-game-leave-active {
+  transition: all .25s ease-in-out;
 }
 
 .game-modal-backdrop {
@@ -104,7 +116,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,14 +137,19 @@ export default {
 }
 
 .modal::-webkit-scrollbar-track {
-  background: none;        /* color of the tracking area */
-  border: 4px solid #333437;  /* creates padding around scroll thumb */
+  background: none;
+  /* color of the tracking area */
+  border: 4px solid #333437;
+  /* creates padding around scroll thumb */
 }
 
 .modal::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,.5);    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 4px solid #333437;  /* creates padding around scroll thumb */
+  background-color: rgba(0, 0, 0, .5);
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 4px solid #333437;
+  /* creates padding around scroll thumb */
 }
 
 .modal-header,
