@@ -8,7 +8,7 @@
 
     <main role="main" class="col-md-9 col-lg-9 ml-auto pl-4 ">
       <div class="home-image d-flex">
-        <img src="../assets/img/subnauticaLogo.png" alt="Subnautica Logo" class="img-fluid m-auto disable-select">
+        <img src="../assets/img/subnauticaLogo.png" alt="Subnautica Logo" class="img-fluid m-auto disable-select" draggable="false">
       </div>
       <div class="row mt-4">
         <div class="col-md-8">
@@ -45,27 +45,27 @@
           <div class="bg-on-dark-variant social rounded-lg d-flex justify-content-center py-5 disable-select">
             <ul class="nav">
              <li class="nav-item">
-               <a class="nav-link" href="https://discord.gg/E8B4X9s" target="_blank" @click.prevent="openExternalBrowser" data-toggle="tooltip" data-placement="top" title="Join the Discord server">
+               <a class="nav-link" href="https://discord.gg/E8B4X9s" target="_blank" @click.prevent="openExternalBrowser" draggable="false" data-toggle="tooltip" data-placement="top" title="Join the Discord server">
                <img src="../assets/img/svg/discord.svg" alt="Discord Logo">
              </a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="https://twitter.com/modnitrox" target="_blank" @click.prevent="openExternalBrowser" data-toggle="tooltip" data-placement="top" title="Follow on Twitter">
+               <a class="nav-link" href="https://twitter.com/modnitrox" target="_blank" @click.prevent="openExternalBrowser" draggable="false" data-toggle="tooltip" data-placement="top" title="Follow on Twitter">
                <img src="../assets/img/svg/twitter.svg" alt="Twitter">
                </a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="https://www.reddit.com/r/SubnauticaNitrox/" target="_blank" @click.prevent="openExternalBrowser" data-toggle="tooltip" data-placement="top" title="Join the Subreddit">
+               <a class="nav-link" href="https://www.reddit.com/r/SubnauticaNitrox/" target="_blank" @click.prevent="openExternalBrowser" draggable="false" data-toggle="tooltip" data-placement="top" title="Join the Subreddit">
                <img src="../assets/img/svg/reddit.svg" alt="Reddit">
              </a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="https://github.com/SubnauticaNitrox/Nitrox" target="_blank" @click.prevent="openExternalBrowser" data-toggle="tooltip" data-placement="top" title="Contribute on GitHub">
+               <a class="nav-link" href="https://github.com/SubnauticaNitrox/Nitrox" target="_blank" @click.prevent="openExternalBrowser" draggable="false" data-toggle="tooltip" data-placement="top" title="Contribute on GitHub">
                <img src="../assets/img/svg/github.svg" alt="GitHub" width="24px">
              </a>
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="https://nitrox.rux.gg" target="_blank" @click.prevent="openExternalBrowser" data-toggle="tooltip" data-placement="top" title="Visit the official website">
+               <a class="nav-link" href="https://nitrox.rux.gg" target="_blank" @click.prevent="openExternalBrowser" draggable="false" data-toggle="tooltip" data-placement="top" title="Visit the official website">
                <img src="../assets/img/svg/website.svg" alt="Website" width="26px">
              </a>
              </li>
