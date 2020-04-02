@@ -65,7 +65,7 @@ export default {
 
 .path {
   stroke: #FFFFFF;
-  stroke-dasharray: 187;
+  stroke-dasharray: 180;
   stroke-dashoffset: 0;
   -webkit-transform-origin: center;
   transform-origin: center;
@@ -79,13 +79,13 @@ export default {
   }
 
   50% {
-    stroke-dashoffset: 46.75;
+    stroke-dashoffset: 50;
     -webkit-transform: rotate(135deg);
     transform: rotate(135deg);
   }
 
   100% {
-    stroke-dashoffset: 180;
+    stroke-dashoffset: 187;
     -webkit-transform: rotate(450deg);
     transform: rotate(450deg);
   }

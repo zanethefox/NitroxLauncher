@@ -93,6 +93,7 @@
 </template>
 
 <script>
+
 import TitleBar from '@/components/TitleBar.vue'
 import SettingsModal from './components/SettingsModal.vue';
 
