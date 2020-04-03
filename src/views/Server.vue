@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="col-md-8 offset-md-2">
-                    <img src="../assets/img/illustration/start-server.svg" alt="Start Server" class="img-fluid disable-select" draggable="false">
+                    <img src="../assets/img/illustration/start-server.svg" alt="Start Server" class="img-fluid disable-select mx-auto d-block" draggable="false">
                 </div>
 
                 <!-- Start button -->

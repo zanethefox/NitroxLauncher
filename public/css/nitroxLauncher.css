@@ -646,3 +646,21 @@ main {
 .btn-console:focus {
   box-shadow: none
 }
+
+
+/* options */
+.settings-control .custom-control {
+    background: #28292C;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #1F1F23;
+}
+
+.settings-control .custom-control.selected {
+    background: #3D3E41;
+    border: 1px solid #3D3E41;
+}
+
+.settings-control .custom-control .custom-control-label {
+    margin-left: 28px
+}

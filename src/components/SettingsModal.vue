@@ -40,10 +40,10 @@ export default {
 
         <!-- Modal navigation -->
         <nav class="col-md-3 d-md-block sidebar modal-menu disable-select">
-          <div class="sidebar-sticky d-flex align-items-start flex-column">
+          <div class="sidebar-sticky d-flex align-items-start flex-column pt-0">
             <!-- Sidebar -->
             <ul class="nav w-100 flex-column mb-auto">
-              <li class="nav-item mt-4 mb-1 pl-3">
+              <li class="nav-item mt-5 mb-1 pl-3">
                 <h6>Nitrox settings</h6>
               </li>
               <li class="nav-item mb-1">
@@ -76,38 +76,92 @@ export default {
         </nav>
 
       <!-- Modal content -->
-        <section class="modal-body" id="modalDescription">
+        <section class="modal-body pt-0" id="modalDescription">
           <div class="row m-0 p-0">
 
             <!-- Body -->
             <div class="col-md-8 col-lg-8 ml-auto px-4">
               <slot name="body">
                 <template v-if="this.settingsActiveTab == 'general'">
-                  <div class="settings-general pt-3">
-                    <h6>Subnautica Installation</h6>
-                    <div class="bg-on-dark-variant p-4 mt-3 rounded-lg">
-                      <div class="media">
-                        <img src="../assets/img/subnautica-icon.jpg" class="mr-3 img-fluid rounded disable-select" alt="Subnautica Icon" width="64px">
-                        <div class="media-body mt-1">
-                          <h5 class="mt-0 mb-1 font-400">Subnautica</h5>
-                          <p class="font-14 opacity-75 m-0">D:\Games\Epic Games\Subnautica</p>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="settings-general pt-5">
+                      <div class="row">
+                         <div class="col-md-12">
+                             <h6>Subnautica Installation</h6>
+                             <div class="bg-on-dark-variant p-4 mt-3 rounded-lg">
+                               <div class="media">
+                                 <img src="../assets/img/subnautica-icon.jpg" class="mr-3 img-fluid rounded disable-select" alt="Subnautica Icon" width="64px">
+                                 <div class="media-body mt-1">
+                                   <h5 class="mt-0 mb-1 font-400">Subnautica</h5>
+                                   <p class="font-14 opacity-75 m-0">D:\Games\Epic Games\Subnautica</p>
+                                 </div>
+                               </div>
+                             </div>
 
-                    <p class="mt-4">Incorrect installation path?</p>
-                    <button type="button" name="button" class="btn btn-primary font-16 btn-lg px-5">Browse</button>
+                             <p class="mt-4">Incorrect installation path?</p>
+                             <button type="button" name="button" class="btn btn-primary font-16 btn-lg px-5">Browse</button>
+                         </div>
+                      </div>
                   </div>
                 </template>
 
                 <template v-if="this.settingsActiveTab == 'server'">
-                  <div class="settings-server pt-3">
-                    <h6>Server settings</h6>
+                    <div class="settings-server pt-5">
+                        <!-- Server Port -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6 class="disable-select pb-1">Server Port</h6>
+                                <input type="text" class="form-control" id="form-server-port" placeholder="Server port" value="11000">
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                <p class="opacity-75 font-14">The Nitrox server needs an open port to communicate through. This can be achieved by port forwarding or through the use of a VPN service like Hamachi if you do not know or want to port forward.</p>
+                            </div>
+                        </div>
+                        <!-- Server Players and Gamemode -->
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <h6 class="disable-select pb-1">Max. Players</h6>
+                                <input type="number" min="2" max="100" class="form-control" id="form-server-slots" placeholder="2-100" value="100">
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="disable-select pb-1">Game mode</h6>
+                                <select class="form-control" id="form-server-game-mode" >
+                                    <option>Survival</option>
+                                    <option>Creative</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Admin -->
+                        <div class="row mt-3">
+                            <div class="col-12 mb-4 pb-1 mt-4"><div class="line"></div></div>
+                            <div class="col-md-12">
+                                <h6 class="disable-select pb-1">Admin Password</h6>
+                                <input class="form-control" id="form-server-admin-password" placeholder="Admin password" value="NONBPFWPFPHL">
+                            </div>
+                        </div>
+
+                        <!-- Server Window -->
+                        <div class="row mt-3">
+                            <div class="col-12 mb-4 pb-1 mt-4"><div class="line"></div></div>
+                            <div class="col-md-12">
+                                <h6 class="disable-select pb-1">Server window</h6>
+                                <div class="settings-control">
+                                    <div class="custom-control custom-checkbox mb-2">
+                                      <input type="radio" id="server-type-docked" name="server-type" class="custom-control-input" checked>
+                                      <label class="custom-control-label" for="server-type-docked">Docked console</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                      <input type="radio" id="server-type-window" name="server-type" class="custom-control-input">
+                                      <label class="custom-control-label" for="server-type-window">External console window</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                   </div>
                 </template>
 
                 <template v-if="this.settingsActiveTab == 'changelog'">
-                  <div class="settings-changelog pt-3">
+                  <div class="settings-changelog pt-5">
                     <h6>Changelog</h6>
                   </div>
                 </template>
@@ -117,7 +171,7 @@ export default {
 
             <!-- Close button -->
             <div class="col-md-1">
-              <button type="button" class="btn sm-btn btn-icon position-fixed" @click="close" aria-label="Close modal" style="right: 32px;">
+              <button type="button" class="btn sm-btn btn-icon position-fixed mt-4" @click="close" aria-label="Close modal" style="right: 38px;">
                 <span class="material-icons">close</span>
               </button>
               <h6 class="esc-text disable-select opacity-5">ESC</h6>
@@ -132,8 +186,8 @@ export default {
 <style>
 .esc-text {
   position: fixed;
-  top: 85px;
-  right: 43px;
+  top: 92px;
+  right: 49px;
   letter-spacing: 0.5px;
   font-size: 10px;
 }
