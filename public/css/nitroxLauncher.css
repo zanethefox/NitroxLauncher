@@ -581,10 +581,9 @@ main {
 .server-console {
   overflow-y: scroll;
   height: calc(100vh - 98px - 1rem);
-
 }
 
-.form-console {
+.form-control.form-console {
   color: #e9ecef;
   background-color: #36383A;
   border: 1px solid #36383A;
@@ -594,7 +593,7 @@ main {
   padding: 1.5rem
 }
 
-.form-console:focus {
+.form-control.form-console:focus {
   color: #e9ecef;
   background-color: #36383A;
   border: 1px solid #36383A;
