@@ -138,6 +138,10 @@ h6 {
   font-size: 11px;
 }
 
+.font-12 {
+    font-size: 12px
+}
+
 .font-14 {
   font-size: 14px;
 }
@@ -632,6 +636,11 @@ main {
 .server-console {
   overflow-y: scroll;
   height: calc(100vh - 98px - 1rem);
+  overflow-wrap: break-word;
+}
+
+.server-console p {
+    margin-bottom: 0.25rem;
 }
 
 .form-control.form-console {

@@ -32,13 +32,28 @@
             <!-- Console output -->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="server-console font-mono overflow-scroll mt-3">
+                    <div class="server-console font-mono font-14 overflow-scroll mt-3">
                         <div class="server-console-output">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>[19:46:23 Server INFO]: Could not load world: System.IO.InvalidDataException: Persisted state is not valid at NitroxServer.Serialization.World.WorldPersistence.LoadFromFile() in C:\Users\Sunrunner\Desktop\Code\Nitrox\NitroxServer\Serialization\World\WorldPersistence.cs:line 87 creating a new one.</p>
+                            <p>[19:46:23 Server DEBUG]: Event Triggerer started!</p>
+                            <p>[19:46:23 Server INFO]: World GameMode: Survival</p>
+                            <p>[19:46:23 Server INFO]: Server Password: None. Public Server.</p>
+                            <p>[19:46:23 Server INFO]: Admin Password: NONBPFWPFPHL</p>
+                            <p>[19:46:23 Server INFO]: To get help for commands, run help in console or /help in chatbox</p>
+                            <p>[19:46:23 Server INFO]: If playing on LAN, use this IP: 192.168.178.37</p>
+                            <p>[19:46:23 Server INFO]: Using LiteNetLib as networking library</p>
+                            <p>[19:46:23 Server INFO]: Nitrox Server Started</p>
+                            <p>[19:46:23 Server INFO]: If using port forwarding, use this IP: 21.1337.420.21</p>
+                            <p>[19:46:23 Server INFO]: Could not load world: System.IO.InvalidDataException: Persisted state is not valid at NitroxServer.Serialization.World.WorldPersistence.LoadFromFile() in C:\Users\Sunrunner\Desktop\Code\Nitrox\NitroxServer\Serialization\World\WorldPersistence.cs:line 87 creating a new one.</p>
+                            <p>[19:46:23 Server DEBUG]: Event Triggerer started!</p>
+                            <p>[19:46:23 Server INFO]: World GameMode: Survival</p>
+                            <p>[19:46:23 Server INFO]: Server Password: None. Public Server.</p>
+                            <p>[19:46:23 Server INFO]: Admin Password: NONBPFWPFPHL</p>
+                            <p>[19:46:23 Server INFO]: To get help for commands, run help in console or /help in chatbox</p>
+                            <p>[19:46:23 Server INFO]: If playing on LAN, use this IP: 192.168.178.37</p>
+                            <p>[19:46:23 Server INFO]: Using LiteNetLib as networking library</p>
+                            <p>[19:46:23 Server INFO]: Nitrox Server Started</p>
+                            <p>[19:46:23 Server INFO]: If using port forwarding, use this IP: 21.1337.420.21</p>
                         </div>
                     </div>
                 </div>
