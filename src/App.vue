@@ -114,7 +114,7 @@ export default {
 
     closeSettingsModal() {
       this.isSettingsModalVisible = false;
-    }
+    },
   },
 };
 </script>

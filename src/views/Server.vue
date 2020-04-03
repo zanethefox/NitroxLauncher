@@ -18,7 +18,7 @@
 
                 <!-- Start button -->
                 <div class="col-md-12 text-center pt-5 mt-3">
-                    <a class="btn btn-primary btn-lg text-uppercase px-5" @click.prevent="toggleServer()">
+                    <a class="btn btn-primary btn-lg text-uppercase px-5 button-fancy" @click.prevent="toggleServer()" id="button-fancy" v-on:mousemove="updateCoordinates">
                         Start Server
                         <h6 class="pt-0 mb-1 text-uppercase">multiplayer</h6>
                     </a>
@@ -78,12 +78,20 @@ export default {
     data() {
         return {
             isServerStarted: false,
+            x: 0,
+            y: 0,
         };
     },
 
     methods: {
         toggleServer() {
             this.isServerStarted = !this.isServerStarted
+        },
+        updateCoordinates: function(event) {
+            this.x = event.layerX;
+            this.y = event.layerY;
+            document.getElementById('button-fancy').style.setProperty('--x', this.x + 'px');
+            document.getElementById('button-fancy').style.setProperty('--y', this.y + 'px');
         },
     },
 };
