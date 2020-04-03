@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="col-md-8 offset-md-2">
-                    <img src="../assets/img/illustration/start-server.svg" alt="Start Server" class="img-fluid disable-select mx-auto d-block" draggable="false">
+                    <div class="illustration-start-server"></div>
                 </div>
 
                 <!-- Start button -->
@@ -62,6 +62,16 @@
 </div>
 </template>
 
+<style media="screen">
+    .illustration-start-server {
+        background-image: url('../assets/img/illustration/start-server.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 180px;
+    }
+</style>
+
 <script>
 export default {
 
@@ -77,6 +87,4 @@ export default {
         },
     },
 };
-
-
 </script>

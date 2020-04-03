@@ -8,7 +8,7 @@
 
     <main role="main" class="col-md-9 col-lg-9 ml-auto pl-4 ">
       <div class="home-image d-flex">
-        <img src="../assets/img/subnauticaLogo.png" alt="Subnautica Logo" class="img-fluid m-auto disable-select" draggable="false">
+          <div class="subnautica-logo"></div>
       </div>
       <div class="row mt-4">
         <div class="col-md-8">
@@ -115,6 +115,18 @@
     </main>
   </div>
 </template>
+
+<style media="screen">
+    .subnautica-logo {
+        background-image: url('../assets/img/subnauticaLogo.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 352px;
+        margin: 0 auto;
+    }
+</style>
+
 <script>
 const { remote } = require('electron');
 
