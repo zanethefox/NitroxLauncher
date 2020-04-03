@@ -3,9 +3,10 @@
 
     <confirmation-modal v-show="isConfirmationModalVisible" @close="closeConfirmationModal" @stop-server="toggleServer()"/>
 
-    <main role="main" class="col-md-9 col-lg-9 ml-auto px-4">
-        <div class="server-start-page" v-if="!this.isServerStarted">
+    <main role="main" class="col-md-9 col-lg-9 ml-auto px-4 overflow-hidden">
+        <transition name="server-fade" mode="out-in">
 
+        <div class="server-start-page" key=1 v-if="!this.isServerStarted">
             <div class="row">
                 <!-- Header -->
                 <div class="col-md-12 text-center pt-3">
@@ -27,11 +28,8 @@
                     </a>
                 </div>
             </div>
-
         </div>
-
-        <div class="server-console-page" v-else>
-
+        <div class="server-console-page" key=2 v-else>
             <!-- Console output -->
             <div class="row">
                 <div class="col-md-12">
@@ -68,14 +66,18 @@
                     <div class="input-group">
                       <input type="text" class="form-control form-control-lg form-console" placeholder="Message">
                       <div class="input-group-append" id="button-addon4">
-                        <button class="btn btn-console btn-send" type="button"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Send console command">send</span></button>
-                        <button class="btn btn-console btn-stop" type="button" @click="showConfirmationModal"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Save and stop the server">stop</span></button>
+                        <button class="btn btn-console btn-send" type="button">
+                            <span class="material-icons">send</span>
+                        </button>
+                        <button class="btn btn-console btn-stop pr-2" type="button" @click="showConfirmationModal">
+                            <span class="material-icons">stop</span>
+                        </button>
                       </div>
                     </div>
                 </div>
             </div>
         </div>
-
+    </transition>
     </main>
 </div>
 </template>
@@ -87,6 +89,16 @@
         background-size: contain;
         background-position: center;
         height: 180px;
+    }
+    .server-fade-enter-active,
+    .server-fade-leave-active {
+        transition: all .35s cubic-bezier(0.5, -0.25, 0, 1.25);
+    }
+
+    .server-fade-enter,
+    .server-fade-leave-to {
+        opacity: 0;
+        transform: scale(1.1);
     }
 </style>
 

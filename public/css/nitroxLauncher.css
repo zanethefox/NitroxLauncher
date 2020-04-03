@@ -692,41 +692,46 @@ main {
   padding-bottom: 0px;
 }
 
-.btn-stop:hover {
-  color: #EB5757;
-}
-.btn-stop .material-icons {
-  transform: scale(1);
-  transition: transform ease-in-out .035s
-}
-.btn-stop:hover .material-icons {
-  transform: scale(1.15);
-}
-.btn-stop:active .material-icons {
-  transform: scale(1.1);
-}
-
 .btn-send {
   border: 1px solid #36383A;
   background: #36383A;
-  color: #b9bbbe;
   padding-bottom: 0px;
-}
-
-.btn-send:hover {
-  color: #fff;
-}
-
-.btn-send:active .material-icons {
-  transform: scale(0.9);
 }
 
 .btn-console .material-icons {
   margin-top: 0px;
+  padding: 6px;
+  color: #b9bbbe;
+  transition: all ease-in-out .1s!important;
+}
+
+.btn-console.btn-stop:hover .material-icons {
+  color: #EB5757;
+}
+
+.btn-console.btn-send:hover .material-icons {
+  color: #FFF;
 }
 
 .btn-console:focus {
   box-shadow: none
+}
+
+.btn-console .material-icons {
+  border-radius: 8px;
+  transition: all ease-in-out .05s
+}
+
+.btn-console:hover .material-icons {
+    transform: scale(1.1);
+}
+
+.btn-console:active .material-icons {
+    transform: scale(1);
+}
+
+.btn-console {
+    padding: 0;
 }
 
 
