@@ -1,5 +1,8 @@
 <template>
 <div class="server">
+
+    <confirmation-modal v-show="isConfirmationModalVisible" @close="closeConfirmationModal" />
+
     <main role="main" class="col-md-9 col-lg-9 ml-auto px-4">
         <div class="server-start-page" v-if="!this.isServerStarted">
 
@@ -66,7 +69,7 @@
                       <input type="text" class="form-control form-control-lg form-console" placeholder="Message">
                       <div class="input-group-append" id="button-addon4">
                         <button class="btn btn-console btn-send" type="button"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Send console command">send</span></button>
-                        <button class="btn btn-console btn-stop" type="button" @click.prevent="toggleServer()"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Save and stop the server">stop</span></button>
+                        <button class="btn btn-console btn-stop" type="button" @click="showConfirmationModal"><span class="material-icons" data-toggle="tooltip" data-placement="top" title="Save and stop the server">stop</span></button>
                       </div>
                     </div>
                 </div>
@@ -88,11 +91,18 @@
 </style>
 
 <script>
+import ConfirmationModal from '@/components/ConfirmationModal.vue';
+
 export default {
+
+    components: {
+        ConfirmationModal,
+    },
 
     data() {
         return {
             isServerStarted: false,
+            isConfirmationModalVisible: false,
             x: 0,
             y: 0,
         };
@@ -107,6 +117,12 @@ export default {
             this.y = event.layerY;
             document.getElementById('button-fancy').style.setProperty('--x', this.x + 'px');
             document.getElementById('button-fancy').style.setProperty('--y', this.y + 'px');
+        },
+        showConfirmationModal() {
+            this.isConfirmationModalVisible = true;
+        },
+        closeConfirmationModal() {
+            this.isConfirmationModalVisible = false;
         },
     },
 };
