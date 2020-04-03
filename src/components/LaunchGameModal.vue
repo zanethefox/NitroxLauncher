@@ -136,6 +136,4 @@ export default {
   position: relative;
   border-radius: 8px
 }
-
-
 </style>

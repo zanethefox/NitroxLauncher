@@ -397,6 +397,23 @@ main {
   border-color: #515255;
 }
 
+.btn-secondary:focus {
+  background: #606165;
+  border-color: #606165;
+}
+
+.btn-secondary:hover {
+    background: #606165;
+    border-color: #606165;
+}
+
+.btn-secondary:active {
+    background: #4D4E51!important;
+    border-color: #4D4E51!important;
+}
+
+
+
 .btn:focus, .btn:active, .btn:not(:disabled):not(.disabled):active:focus{
     box-shadow: none
 }
@@ -417,6 +434,8 @@ main {
 
 .btn-primary.button-fancy, .btn-primary.button-fancy:hover {
     background: #007bff!important;
+    text-shadow: 0px 2px 6px #007bff;
+
 }
 
 .button-fancy span {
@@ -433,13 +452,13 @@ main {
   top: var(--y);
   width: var(--size);
   height: var(--size);
-  background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.2), transparent);
+  background: radial-gradient(circle closest-side, rgba(255, 255, 255, 0.25), transparent);
   transform: translate(-50%, -50%);
   transition: width 0.2s ease-in-out, height 0.2s ease-in-out, opacity 0.2s ease-in-out, background 0.5s ease-in-out;
 }
 
 .button-fancy:hover::before {
-  --size: 300px;
+  --size: 250px;
   opacity: 1;
 }
 

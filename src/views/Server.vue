@@ -1,7 +1,7 @@
 <template>
 <div class="server">
 
-    <confirmation-modal v-show="isConfirmationModalVisible" @close="closeConfirmationModal" />
+    <confirmation-modal v-show="isConfirmationModalVisible" @close="closeConfirmationModal" @stop-server="toggleServer()"/>
 
     <main role="main" class="col-md-9 col-lg-9 ml-auto px-4">
         <div class="server-start-page" v-if="!this.isServerStarted">
