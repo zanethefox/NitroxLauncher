@@ -553,7 +553,7 @@ main {
 }
 
 .home-image {
-  background: url('../img/preview.jpg');
+  background: url('../img/preview.jpg'), #3D3E41;
   min-height: 360px;
   background-position: center;
   background-size: cover;
