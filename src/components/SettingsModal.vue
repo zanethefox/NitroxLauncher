@@ -83,7 +83,7 @@ export default {
             <div class="col-md-8 col-lg-8 ml-auto px-4">
               <slot name="body">
                 <template v-if="this.settingsActiveTab == 'general'">
-                  <div class="settings-general pt-5">
+                  <div class="settings-general pt-5 pb-5">
                       <div class="row">
                          <div class="col-md-12">
                              <h6>Subnautica Installation</h6>
@@ -105,12 +105,12 @@ export default {
                 </template>
 
                 <template v-if="this.settingsActiveTab == 'server'">
-                    <div class="settings-server pt-5">
+                    <div class="settings-server pt-5 pb-5">
                         <!-- Server Port -->
                         <div class="row">
                             <div class="col-md-6">
                                 <h6 class="disable-select pb-1">Server Port</h6>
-                                <input type="text" class="form-control" id="form-server-port" placeholder="Server port" value="11000">
+                                <input type="number" class="form-control" id="form-server-port" placeholder="Server port" value="11000">
                             </div>
                             <div class="col-md-12 mt-3">
                                 <p class="opacity-75 font-14">The Nitrox server needs an open port to communicate through. This can be achieved by port forwarding or through the use of a VPN service like Hamachi if you do not know or want to port forward.</p>
@@ -145,6 +145,8 @@ export default {
                             <div class="col-12 mb-4 pb-1 mt-4"><div class="line"></div></div>
                             <div class="col-md-12">
                                 <h6 class="disable-select pb-1">Server window</h6>
+                                <p class="opacity-75 font-14">Choose whether you'd like to keep the server console docked in the launcher, or open in an external window.</p>
+
                                 <div class="settings-control">
                                     <div class="custom-control custom-checkbox mb-2">
                                       <input type="radio" id="server-type-docked" name="server-type" class="custom-control-input" checked>

@@ -664,3 +664,21 @@ main {
 .settings-control .custom-control .custom-control-label {
     margin-left: 28px
 }
+
+
+/* Input fields */
+.form-control {
+    color: rgba(255,255,255,0.75);
+    background: #28292C;
+    border-radius: 4px;
+    border: 1px solid #1F1F23;
+    height: calc(1.5em + 1.25rem + 2px);
+}
+
+.form-control:focus {
+    color: rgba(255,255,255,0.75);
+    background-color: #28292C;
+    border-color: #1F1F23;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.15);
+}
