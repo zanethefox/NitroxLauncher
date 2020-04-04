@@ -1,7 +1,6 @@
 /*
   * Theme
   */
-
 :root {
     /* Dark colours */
     --bg-almost-black: #1F1F23;
@@ -43,23 +42,6 @@
     --rounded-md: 6px;
     --rounded-lg: 8px;
 }
-
-.bg-darkest {
-    background: var(--bg-darkest)!important;
-}
-
-.bg-darker {
-    background: var(--bg-darker)!important;
-}
-
-.bg-on-dark {
-    background: var(--bg-on-dark)!important;
-}
-
-.bg-on-dark-variant {
-    background: var(--bg-on-dark-variant)!important;
-}
-
 
 /*
   * Fonts
@@ -182,6 +164,8 @@ body {
     font-style: normal;
     background: var(--bg-darker);
     color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -234,6 +218,21 @@ h6 {
     font-size: var(--font-11);
 }
 
+.bg-darkest {
+    background: var(--bg-darkest)!important;
+}
+
+.bg-darker {
+    background: var(--bg-darker)!important;
+}
+
+.bg-on-dark {
+    background: var(--bg-on-dark)!important;
+}
+
+.bg-on-dark-variant {
+    background: var(--bg-on-dark-variant)!important;
+}
 
 .disable-select {
     -webkit-user-select: none;
