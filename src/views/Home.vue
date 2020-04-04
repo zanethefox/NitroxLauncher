@@ -23,14 +23,14 @@
                 </div>
 
             </div>
-            <div class="col-md-4 start-game-buttons">
+            <div class="col-md-4 start-game-buttons pl-0">
                 <button class="btn btn-primary btn-lg text-uppercase btn-block button-fancy" id="button-fancy" @click="showLaunchGameModal" v-on:mousemove="updateCoordinates">
                     <span>
                         Play
                         <h6 class="pt-0 mb-1 text-uppercase">multiplayer</h6>
                     </span>
                 </button>
-                <a class="btn btn-secondary btn-lg text-uppercase btn-block font-16" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica singleplayer">Singleplayer</a>
+                <a class="btn btn-secondary btn-lg text-uppercase btn-block font-14" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica singleplayer">Singleplayer</a>
             </div>
         </div>
 
@@ -46,27 +46,27 @@
                 <div class="bg-on-dark-variant social rounded-lg d-flex justify-content-center py-5 disable-select">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://discord.gg/E8B4X9s')" draggable="false" data-toggle="tooltip" data-placement="top" title="Join the Discord server">
+                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://discord.gg/E8B4X9s')" draggable="false" data-tooltip="Join the Discord server">
                                 <img src="../assets/img/svg/discord.svg" alt="Discord Logo">
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://twitter.com/modnitrox')" draggable="false" data-toggle="tooltip" data-placement="top" title="Follow on Twitter">
+                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://twitter.com/modnitrox')" draggable="false" data-tooltip="Follow on Twitter">
                                 <img src="../assets/img/svg/twitter.svg" alt="Twitter">
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://www.reddit.com/r/SubnauticaNitrox/')" draggable="false" data-toggle="tooltip" data-placement="top" title="Join the Subreddit">
+                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://www.reddit.com/r/SubnauticaNitrox/')" draggable="false" data-tooltip="Join the Subreddit">
                                 <img src="../assets/img/svg/reddit.svg" alt="Reddit">
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://github.com/SubnauticaNitrox/Nitrox')" draggable="false" data-toggle="tooltip" data-placement="top" title="Contribute on GitHub">
+                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://github.com/SubnauticaNitrox/Nitrox')" draggable="false" data-tooltip="Contribute on GitHub">
                                 <img src="../assets/img/svg/github.svg" alt="GitHub" width="24px">
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://nitrox.rux.gg')" draggable="false" data-toggle="tooltip" data-placement="top" title="Visit the official website">
+                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://nitrox.rux.gg')" draggable="false" data-tooltip="Visit the official website">
                                 <img src="../assets/img/svg/website.svg" alt="Website" width="26px">
                             </a>
                         </li>

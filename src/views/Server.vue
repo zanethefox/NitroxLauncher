@@ -66,10 +66,10 @@
                     <div class="input-group">
                       <input type="text" class="form-control form-control-lg form-console" placeholder="Message">
                       <div class="input-group-append" id="button-addon4">
-                        <button class="btn btn-console btn-send" type="button">
+                        <button class="btn btn-console btn-send" title="Send message" type="button">
                             <span class="material-icons">send</span>
                         </button>
-                        <button class="btn btn-console btn-stop pr-2" type="button" @click="showConfirmationModal">
+                        <button class="btn btn-console btn-stop pr-2" title="Stop server" type="button" @click="showConfirmationModal">
                             <span class="material-icons">stop</span>
                         </button>
                       </div>
