@@ -110,7 +110,8 @@ export default {
                         <div class="row">
                             <div class="col-md-6">
                                 <h6 class="disable-select pb-1">Server Port</h6>
-                                <input type="number" class="form-control" id="form-server-port" placeholder="Server port" value="11000">
+                                <h6 class="font-mono" style="position: absolute;right: 16px;padding: 16px;margin-bottom: 0;z-index: 12;">UDP</h6>
+                                <input type="number" class="form-control pr-5" id="form-server-port" placeholder="Server port" value="11000">
                             </div>
                             <div class="col-md-12 mt-3">
                                 <p class="opacity-75 font-14">The Nitrox server needs an open port to communicate through. This can be achieved by port forwarding or through the use of a VPN service like Hamachi if you do not know or want to port forward.</p>
