@@ -707,6 +707,10 @@ main {
     opacity: 1;
 }
 
+.social .nav-link:active {
+    transform: translateY(1px);
+}
+
 /* Console */
 .server-console {
     overflow-y: scroll;
