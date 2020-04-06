@@ -6,7 +6,7 @@
     <main role="main" class="col-md-9 col-lg-9 ml-auto px-4 overflow-hidden">
         <transition name="server-fade" mode="out-in">
 
-        <div class="server-start-page" key=1 v-if="!this.isServerStarted">
+        <div class="server-start-page" key="1" v-if="!this.isServerStarted">
             <div class="row">
                 <!-- Header -->
                 <div class="col-md-12 text-center pt-3">
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="server-console-page" key=2 v-else>
+        <div class="server-console-page" key="2" v-else>
             <!-- Console output -->
             <div class="row">
                 <div class="col-md-12">

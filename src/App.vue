@@ -49,13 +49,13 @@
                 <span class="h-small">Server</span>
               </router-link>
             </li>
-            <li class="nav-item mb-1 d-none">
-              <router-link to="/patchnotes" class="nav-link">
+            <li class="nav-item mb-1">
+              <router-link to="/news" class="nav-link">
                 <svg width="24px" height="24px" viewBox="0 0 24 24">
                   <path fill="currentColor"
                     d="M20,11H4V8H20M20,15H13V13H20M20,19H13V17H20M11,19H4V13H11M20.33,4.67L18.67,3L17,4.67L15.33,3L13.67,4.67L12,3L10.33,4.67L8.67,3L7,4.67L5.33,3L3.67,4.67L2,3V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V3L20.33,4.67Z" />
                 </svg>
-                <span class="h-small">Patch notes</span>
+                <span class="h-small">News</span>
               </router-link>
             </li>
             <li class="nav-item mb-1" >

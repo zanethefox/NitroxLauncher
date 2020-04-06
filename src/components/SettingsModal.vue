@@ -110,7 +110,9 @@ export default {
                         <div class="row">
                             <div class="col-md-6">
                                 <h6 class="disable-select pb-1">Server Port</h6>
-                                <h6 class="font-mono" style="position: absolute;right: 16px;padding: 16px;margin-bottom: 0;z-index: 12;">UDP</h6>
+                                <span style="position: absolute;right: 16px;padding: 16px;margin-bottom: 0;z-index: 12;" data-tooltip="Port protocol type">
+                                    <h6 class="font-mono">UDP</h6>
+                                </span>
                                 <input type="number" class="form-control pr-5" id="form-server-port" placeholder="Server port" value="11000">
                             </div>
                             <div class="col-md-12 mt-3">
@@ -125,7 +127,7 @@ export default {
                             </div>
                             <div class="col-md-6">
                                 <h6 class="disable-select pb-1">Game mode</h6>
-                                <select class="form-control" id="form-server-game-mode" >
+                                <select class="form-control" id="form-server-game-mode">
                                     <option>Survival</option>
                                     <option>Creative</option>
                                 </select>
