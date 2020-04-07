@@ -33,5 +33,6 @@ The launcher was built using the following frameworks and design resources
 - [Bootstrap 4](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 
 #### Design
+- Tool: [Figma](https://www.figma.com/)
 - Icons: [Material Icons](https://material.io/resources/icons/?style=baseline)
 - Fonts: [Open Sans](https://fonts.google.com/specimen/Open+Sans), [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
