@@ -1,24 +1,37 @@
 # Nitrox Launcher
+Nitrox Launcher built with Electron and VueJS. Designed and inspired by the [dark theme](https://material.io/design/color/dark-theme.html#) material design guidelines.
+The readme file is still WIP as the project is being worked on. For now, to get the development project running follow the steps below.
 
-## Project setup
-```
-yarn install
+[![ForTheBadge winter-is-coming](http://ForTheBadge.com/images/badges/winter-is-coming.svg)](http://ForTheBadge.com)
+
+
+# Get started
+1. Clone or fork the project.
+
+2. Install dependencies
+```bash
+cd NitroxLauncher # or the directory you have defined
+yarn install # install dependencies
 ```
 
-### Compiles and hot-reloads for development
-```
+3. Compiles and hot-reloads for development
+```bash
 yarn electron:serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Missing
+- Add electron builder
+- ...
+- ...
 
-### Lints and fixes files
-```
-yarn lint
-```
+# Tools used
+The launcher was built using the following frameworks and design resources
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Framework
+- [Electron](https://www.electronjs.org/docs)
+- [VueJS CLI](https://cli.vuejs.org/guide/)
+- [Bootstrap 4](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+
+#### Design
+- Icons: [Material Icons](https://material.io/resources/icons/?style=baseline)
+- Fonts: [Open Sans](https://fonts.google.com/specimen/Open+Sans), [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono)
