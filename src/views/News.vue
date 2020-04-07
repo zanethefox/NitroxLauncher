@@ -4,8 +4,9 @@
     <main role="main" class="col-md-9 col-lg-9 ml-auto pl-4">
         <div class="row mt-4">
             <div class="col-md-12">
+
                 <template v-if="!error">
-                    <transition name="fade-in-up" mode="out-in">
+                    <transition name="fade-in" mode="out-in">
                         <!-- News posts -->
                         <div v-if="posts" :key="1">
                             <news-post v-for="post in posts" :key="post.id" :post="post" />
@@ -14,45 +15,48 @@
 
                     <!-- Skeleton while loading posts -->
                     <div :key="2" v-if="!posts">
-                            <div class="news-loading mb-5">
-                                <div class="news-image"/>
-                                <div class="news-h6"/>
-                                <div class="news-h4"/>
-                                <div class="d-flex">
-                                    <div class="news-p"/>
-                                    <div class="news-p"/>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="news-p"/>
-                                    <div class="news-p"/>
-                                    <div class="news-p"/>
-                                </div>
+                        <div class="news-loading mb-5">
+                            <div class="news-image"/>
+                            <div class="news-h6"/>
+                            <div class="news-h4"/>
+                            <div class="d-flex">
+                                <div class="news-p"/>
+                                <div class="news-p"/>
                             </div>
-
-                            <div class="news-loading mb-5">
-                                <div class="news-image"/>
-                                <div class="news-h6"/>
-                                <div class="news-h4"/>
-                                <div class="d-flex">
-                                    <div class="news-p"/>
-                                    <div class="news-p"/>
-                                </div>
-                                <div class="d-flex">
-                                    <div class="news-p"/>
-                                    <div class="news-p"/>
-                                    <div class="news-p"/>
-                                </div>
+                            <div class="d-flex">
+                                <div class="news-p"/>
+                                <div class="news-p"/>
+                                <div class="news-p"/>
                             </div>
                         </div>
+
+                        <div class="news-loading mb-5">
+                            <div class="news-image"/>
+                            <div class="news-h6"/>
+                            <div class="news-h4"/>
+                            <div class="d-flex">
+                                <div class="news-p"/>
+                                <div class="news-p"/>
+                            </div>
+                            <div class="d-flex">
+                                <div class="news-p"/>
+                                <div class="news-p"/>
+                                <div class="news-p"/>
+                            </div>
+                        </div>
+                    </div>
                 </template>
 
                 <template v-else>
                     <!-- Offline / Timeout -->
-                    <div :key="3" class="text-center">
-                        <h3 class="mt-5 pt-5">Something went wrong</h3>
-                        <p class="opacity-75">Check your internet connection and try again.</p>
-                        <button type="button" name="button" class="btn btn-secondary btn-lg mt-4" @click="loadPosts()">Retry</button>
+                    <div :key="3" class="pt-5">
+                      <div class="text-center align-self-center mt-5 pt-5">
+                          <h3 class="font-400 pt-5">Something went wrong</h3>
+                          <p class="opacity-75">Check your internet connection and try again.</p>
+                          <button type="button" name="button" class="btn btn-primary px-4 font-16 mt-4" @click="loadPosts()">Retry</button>
+                      </div>
                     </div>
+
                 </template>
 
             </div>
@@ -63,6 +67,16 @@
 </template>
 
 <style media="screen">
+    .fade-in-enter-active,
+    .fade-in-leave-active {
+        transition: all .35s ease-in-out;
+    }
+
+    .fade-in-enter,
+    .fade-in-leave-to {
+        opacity: 0;
+    }
+
     /* Animation: Blinking effect */
     @keyframes blink {
       0% {
@@ -77,18 +91,7 @@
         opacity: .1;
       }
     }
-
-    .fade-in-up-enter-active,
-    .fade-in-up-leave-active {
-        transition: all .35s cubic-bezier(0.5, -0.25, 0, 1.25);
-    }
-
-    .fade-in-up-enter,
-    .fade-in-up-leave-to {
-        opacity: 0;
-        transform: translateY(0px);
-    }
-
+    
     .news-loading .news-image,
     .news-loading .news-h6,
     .news-loading .news-h4,
@@ -100,26 +103,22 @@
         background: var(--bg-on-dark-variant);
 
     }
-
     .news-loading .news-image {
         height: 368px;
         width: 100%;
     }
-
     .news-loading .news-h6 {
         height: 14px;
         width: 20%;
         margin-top: 1.5rem;
         margin-bottom: .5rem;
     }
-
     .news-loading .news-h4 {
         height: 28px;
         width: 80%;
         margin-top: .5rem;
         margin-bottom: .5rem;
     }
-
     .news-loading .news-p {
         height: 16px;
         margin-top: 0rem;
@@ -158,8 +157,6 @@ export default {
     data() {
         return {
             isSettingsModalVisible: false,
-            x: 0,
-            y: 0,
             posts: '',
             error: false,
         };
@@ -167,13 +164,6 @@ export default {
     methods: {
         openExternalBrowser(link) {
             remote.shell.openExternal(link);
-        },
-        updateCoordinates(e) {
-            let buttonFancy = document.getElementById('button-fancy');
-            this.x = e.layerX;
-            this.y = e.layerY;
-            buttonFancy.style.setProperty('--x', this.x + 'px');
-            buttonFancy.style.setProperty('--y', this.y + 'px');
         },
         loadPosts() {
             let that = this
