@@ -14,9 +14,9 @@ cd NitroxLauncher # or the directory you have defined
 yarn install # install dependencies
 ```
 
-3. Compiles and hot-reloads for development
+3. Run the project
 ```bash
-yarn electron:serve
+yarn electron:serve # compiles and hot-reloads for development
 ```
 
 ### Missing
