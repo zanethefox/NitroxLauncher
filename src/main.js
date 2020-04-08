@@ -10,8 +10,12 @@ new Vue({
   store,
   render: h => h(App),
   data: {
-    serverStarted: false
-  }
+      serverStarted: false
+  },
+  created() {
+      // Prevent blank screen in Electron builds
+      this.$router.push('/')
+  },
 }).$mount('#app')
 
 
