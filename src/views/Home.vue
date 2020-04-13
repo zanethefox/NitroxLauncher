@@ -4,9 +4,7 @@
     <launch-game-modal v-show="isLaunchGameModalVisible" @close="closeLaunchGameModal" />
 
     <main role="main" class="col-md-9 col-lg-9 ml-auto pl-4 ">
-        <div class="home-image d-flex">
-            <div class="subnautica-logo"></div>
-        </div>
+        <image-slider />
         <div class="row mt-4">
             <div class="col-md-8">
                 <p class="size-14">Nitrox is an open-source, multiplayer modification for the game Subnautica.
@@ -43,7 +41,7 @@
                 <p>Follow Nitrox</p>
             </div>
             <div class="col-md-9">
-                <div class="bg-on-dark-variant social rounded-lg d-flex justify-content-center py-5 disable-select">
+                <div class="bg-on-dark-variant social rounded-lg d-flex justify-content-center disable-select">
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://discord.gg/E8B4X9s')" draggable="false" data-tooltip="Join the Discord server">
@@ -134,11 +132,13 @@
 const { remote } = require('electron');
 
 import LaunchGameModal from '@/components/LaunchGameModal.vue';
+import ImageSlider from '@/components/ImageSlider.vue';
 
 export default {
     name: 'Home',
     components: {
         LaunchGameModal,
+        ImageSlider
     },
     data() {
         return {

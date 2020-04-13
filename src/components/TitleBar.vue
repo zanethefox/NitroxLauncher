@@ -3,7 +3,7 @@
   <header id="titlebar">
     <div id="drag-region">
       <div id="window-title">
-        <!--<span>Nitrox Launcher</span>-->
+        <span>Nitrox Launcher</span>
       </div>
       <div id="window-controls">
         <div class="button" id="min-button">
@@ -28,6 +28,6 @@
 
 <script>
 export default {
-  name: 'TitleBar',
+  name: 'TitleBar'
 }
 </script>
