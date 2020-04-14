@@ -1,42 +1,41 @@
-'use strict'
-
-import { app, protocol, BrowserWindow } from 'electron'
-import {
-  createProtocol,
-  /* installVueDevtools */
-} from 'vue-cli-plugin-electron-builder/lib'
+import { app, protocol, BrowserWindow, shell } from 'electron'
+import { createProtocol/*, installVueDevtools */ } from 'vue-cli-plugin-electron-builder/lib'
+import * as Path from 'path';
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win
-let loadingWindow
+let win;
+let winLoading;
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([{scheme: 'app', privileges: { secure: true, standard: true } }])
+/* btw protocol.registerFileProtocol could be used to create click-to-join buttons on websites for quick connect */
 
+/* should also use the loading screen for updating the launcher, prob using squirrel for example? */
 function createLoadingWindow() {
-  loadingWindow = new BrowserWindow({
+  winLoading = new BrowserWindow({
     width: 332,
     height: 342,
     frame: false,
     backgroundColor: '#28292C',
+    resizable: false
   })
 
-  loadingWindow.setResizable(false);
+  winLoading.setResizable(false);
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
-    loadingWindow.loadURL(process.env.WEBPACK_DEV_SERVER_URL + "/loading.html")
+    winLoading.loadURL(process.env.WEBPACK_DEV_SERVER_URL + "/loading.html")
   } else {
     createProtocol('app')
     // Load the index.html when not in development
-    loadingWindow.loadURL('app://./loading.html')
+    winLoading.loadURL('app://./loading.html')
   }
 
-  loadingWindow.on('closed', () => loadingWindow = null);
-  loadingWindow.webContents.on('did-finish-load', () => {
-    loadingWindow.show();
+  winLoading.on('closed', () => winLoading = null);
+  winLoading.webContents.on('did-finish-load', () => {
+    winLoading.show();
   });
 }
 
@@ -52,32 +51,48 @@ function createWindow () {
     titleBarStyle: 'hidden',
     backgroundColor: '#28292C',
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true, /* this has to be changed for preload */
+      preload: Path.join(__dirname, '../src/', './preload.js')
     },
     show: false
-  })
+  });
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL)
-    if (!process.env.IS_TEST) win.webContents.openDevTools()
+    /* if (!process.env.IS_TEST) win.webContents.openDevTools() */
+    if (!process.env.IS_TEST) {
+      ""
+    }
   } else {
     createProtocol('app')
     // Load the index.html when not in development
     win.loadURL('app://./index.html')
   }
 
+  function handleRedirect(e, url) {
+    e.preventDefault();
+    shell.openExternal(url);
+  }
+
+  win.webContents.on('new-window', handleRedirect); /* Found at https://electronjs.org/docs/api/web-contents */
+
+  /* Has to be worked on because if there are internal browsing it can cause problems * /
+  win.webContents.on('will-navigate', (e, url) => {
+      handleRedirect(e, url);
+  }); */
+
   win.on('closed', () => {
     win = null
   })
 
   win.webContents.on('did-finish-load', () => {
-  /// when the content has loaded, hide the loading screen and show the main window
-  if (loadingWindow) {
-    loadingWindow.close();
-  }
-  win.show();
-});
+    /// when the content has loaded, hide the loading screen and show the main window
+    if (winLoading) {
+      winLoading.close();
+    }
+    win.show();
+  });
 }
 
 // Quit when all windows are closed.

@@ -41,119 +41,12 @@
     --rounded-sm: 3px;
     --rounded-md: 6px;
     --rounded-lg: 8px;
-}
 
-/*
-  * Fonts
-  */
-/*
-   * Fonts: Material Icons
-   */
-@font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../fonts/materialIcons.woff2) format('woff2');
-}
+    /* Title bar */
+    --titlebar-size: 24px;
 
-.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    display: inline-block;
-    white-space: nowrap;
-    word-wrap: normal;
-    direction: ltr;
-    -webkit-font-feature-settings: 'liga';
-    -webkit-font-smoothing: antialiased;
-}
-
-/* open-sans-regular - latin */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Open Sans Regular'), local('OpenSans-Regular'),
-        url('../fonts/open-sans-v17-latin-regular.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/open-sans-v17-latin-regular.woff') format('woff');
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-italic - latin */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 400;
-    src: local('Open Sans Italic'), local('OpenSans-Italic'),
-        url('../fonts/open-sans-v17-latin-italic.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/open-sans-v17-latin-italic.woff') format('woff');
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-600 - latin */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
-        url('../fonts/open-sans-v17-latin-600.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/open-sans-v17-latin-600.woff') format('woff');
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-600italic - latin */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 600;
-    src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'),
-        url('../fonts/open-sans-v17-latin-600italic.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/open-sans-v17-latin-600italic.woff') format('woff');
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-700 - latin */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Open Sans Bold'), local('OpenSans-Bold'),
-        url('../fonts/open-sans-v17-latin-700.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/open-sans-v17-latin-700.woff') format('woff');
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-700italic - latin */
-@font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: 700;
-    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'),
-        url('../fonts/open-sans-v17-latin-700italic.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/open-sans-v17-latin-700italic.woff') format('woff');
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* ibm-plex-mono-regular - latin */
-@font-face {
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 400;
-    src: local('IBM Plex Mono'), local('IBMPlexMono'),
-        url('../fonts/ibm-plex-mono-v5-latin-regular.woff2') format('woff2'),
-        /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/ibm-plex-mono-v5-latin-regular.woff') format('woff');
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    /* Scroll bar */
+    --scroll-thumb: rgba(255, 255, 255, 0.2);
 }
 
 /*
@@ -248,7 +141,7 @@ h6 {
 #titlebar {
     display: block;
     position: fixed;
-    height: 24px;
+    height: var(--titlebar-size);
     width: 100%;
     /*Compensate for body 1px border*/
     background: var(--bg-darker);
@@ -292,18 +185,47 @@ h6 {
     align-items: center;
     width: 100%;
     height: 100%;
+    cursor: pointer;
+}
+
+/* controls buttons */
+#window-controls .button::before {
+    content: "";
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    -webkit-mask-size: 23.1%;
 }
 
 #min-button {
     grid-column: 1;
 }
 
+#min-button::before {
+    -webkit-mask: url("../img/icons/minimize.svg") no-repeat 50% 50%;
+}
+
 #max-button, #restore-button {
     grid-column: 2;
 }
 
+#max-button::before {
+    -webkit-mask: url("../img/icons/maximize.svg") no-repeat 50% 50%;
+}
+#restore-button::before {
+    -webkit-mask: url("../img/icons/restore.svg") no-repeat 50% 50%;
+}
+
 #close-button {
     grid-column: 3;
+}
+
+#close-button::before {
+    -webkit-mask: url("../img/icons/close.svg") no-repeat 50% 50%;
+}
+
+#close-button:hover {
+    background: #f04747 !important;
 }
 
 @media (-webkit-device-pixel-ratio: 1.5), (device-pixel-ratio: 1.5),
@@ -329,14 +251,6 @@ h6 {
 
 #window-controls .button:active {
     background: var(--white-2);
-}
-
-#close-button:hover {
-    background: #EB5757 !important;
-}
-
-#close-button:active {
-    background: #F1707A !important;
 }
 
 #close-button:active .icon {
@@ -367,6 +281,7 @@ h6 {
     text-overflow: ellipsis;
     white-space: nowrap;
     line-height: 1.5;
+    opacity: .5;
 }
 
 .maximized #titlebar {
@@ -387,8 +302,8 @@ h6 {
 }
 
 main, nav {
-    height: calc(100vh - 24px);
-    margin-top: 24px;
+    height: calc(100vh - var(--titlebar-size));
+    margin-top: var(--titlebar-size);
     overflow-y: auto;
 }
 
@@ -421,14 +336,15 @@ main {
 }
 
 ::-webkit-scrollbar-track {
-    background: none;
+    background: var(--bg-on-dark-variant)!important;
+    border-radius: 20px;
     /* color of the tracking area */
     border: 4px solid var(--bg-on-dark);
     /* creates padding around scroll thumb */
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--black-5);
+    background-color: var(--scroll-thumb);
     /* color of the scroll thumb */
     border-radius: 20px;
     /* roundness of the scroll thumb */
@@ -437,7 +353,7 @@ main {
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: var(--black-375);
+    opacity: .8;
 }
 
 /*
@@ -538,7 +454,7 @@ main {
 .sidebar-sticky {
     position: relative;
     top: 0;
-    height: calc(100vh - 24px);
+    height: calc(100vh - var(--titlebar-size));
     padding-top: .5rem;
     overflow-x: hidden;
     overflow-y: auto;
@@ -683,10 +599,16 @@ main {
 }
 
 .home-image {
-    background: url('../img/preview.jpg'), var(--bg-on-dark-variant);
+    background-color: var(--bg-on-dark-variant);
+    background-image: url(../img/preview.jpg);
     min-height: 360px;
+    position: relative;
     background-position: center;
     background-size: cover;
+}
+
+.subnautica-logo {
+    z-index: 100;
 }
 
 .line {

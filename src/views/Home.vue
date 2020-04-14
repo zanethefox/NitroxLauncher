@@ -43,30 +43,30 @@
                 <p>Follow Nitrox</p>
             </div>
             <div class="col-md-9">
-                <div class="bg-on-dark-variant social rounded-lg d-flex justify-content-center py-5 disable-select">
+                <div class="bg-on-dark-variant social rounded-lg d-flex justify-content-center disable-select">
                     <ul class="nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://discord.gg/E8B4X9s')" draggable="false" data-tooltip="Join the Discord server">
+                            <a class="nav-link" :href="linkDiscord" target="_blank" data-tooltip="Join the Discord server">
                                 <img src="../assets/img/svg/discord.svg" alt="Discord Logo">
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://twitter.com/modnitrox')" draggable="false" data-tooltip="Follow on Twitter">
+                            <a class="nav-link" :href="linkTwitter" target="_blank" data-tooltip="Follow on Twitter">
                                 <img src="../assets/img/svg/twitter.svg" alt="Twitter">
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://www.reddit.com/r/SubnauticaNitrox/')" draggable="false" data-tooltip="Join the Subreddit">
+                            <a class="nav-link" :href="linkReddit" target="_blank" data-tooltip="Join the Subreddit">
                                 <img src="../assets/img/svg/reddit.svg" alt="Reddit">
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://github.com/SubnauticaNitrox/Nitrox')" draggable="false" data-tooltip="Contribute on GitHub">
+                            <a class="nav-link" :href="linkGithub" target="_blank" data-tooltip="Contribute on GitHub">
                                 <img src="../assets/img/svg/github.svg" alt="GitHub" width="24px">
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://nitrox.rux.gg')" draggable="false" data-tooltip="Visit the official website">
+                            <a class="nav-link" :href="linkWebsite" target="_blank" data-tooltip="Visit the official website">
                                 <img src="../assets/img/svg/website.svg" alt="Website" width="26px">
                             </a>
                         </li>
@@ -83,15 +83,15 @@
             </div>
             <div class="col-md-3">
                 <h6 class="pt-0 mb-1 text-uppercase size-11">Mod version</h6>
-                <p class="size-14">Alpha 1.3.0.0</p>
+                <p class="size-14">{{modVersion}}</p>
             </div>
             <div class="col-md-3">
                 <h6 class="pt-0 mb-1 text-uppercase size-11">Release</h6>
-                <p class="size-14">4th April 2020</p>
+                <p class="size-14">{{modRelease}}</p>
             </div>
             <div class="col-md-3">
                 <h6 class="pt-0 mb-1 text-uppercase size-11">Size</h6>
-                <p class="size-14">24.71 MB</p>
+                <p class="size-14">{{modSize}}</p>
             </div>
         </div>
 
@@ -103,13 +103,13 @@
             </div>
             <div class="col-md-9">
                 <h6 class="pt-0 mb-1 text-uppercase size-11">Developers</h6>
-                <p class="size-14">Sunrunner, Killzoms, Jannify, Marjin, Measurity, MadMax, Nes, _HeN_, CatSZekely, Garsia, RabidCrab, AquariusSidhe, Amarok, iCleeem</p>
+                <p class="size-14">{{contribDev}}</p>
 
                 <h6 class="pt-0 mb-1 text-uppercase size-11">Staff</h6>
-                <p class="size-14">Werewolfs, Shalix, CriticalCookie, InfamousJay, and a big thanks to the discord support team (Artic-Peepers, Peepers)</p>
+                <p class="size-14">{{contribStaff}}</p>
 
-                <h6 class="pt-0 mb-1 text-uppercase size-11">Design</h6>
-                <p class="size-14">Rux</p>
+                <h6 class="pt-0 mb-1 text-uppercase size-11">Launcher / Design</h6>
+                <p class="size-14">{{contribLauncher}}</p>
             </div>
         </div>
 
@@ -131,14 +131,12 @@
 <script>
 /* eslint no-unused-vars:0 */
 
-const { remote } = require('electron');
-
 import LaunchGameModal from '@/components/LaunchGameModal.vue';
 
 export default {
     name: 'Home',
     components: {
-        LaunchGameModal,
+        LaunchGameModal
     },
     data() {
         return {
@@ -146,6 +144,20 @@ export default {
             isLaunchGameModalVisible: false,
             x: 0,
             y: 0,
+            
+            linkDiscord: window.NitroxNative.project.social.discord,
+            linkTwitter: window.NitroxNative.project.social.twitter,
+            linkReddit: window.NitroxNative.project.social.reddit,
+            linkGithub: window.NitroxNative.project.social.github,
+            linkWebsite: window.NitroxNative.project.social.website,
+
+            modVersion: window.NitroxNative.project.mod.version,
+            modRelease: window.NitroxNative.project.mod.release,
+            modSize: window.NitroxNative.project.mod.size,
+
+            contribDev: window.NitroxNative.project.contributors.devs.join(', '),
+            contribStaff: window.NitroxNative.project.contributors.staff.join(', '),
+            contribLauncher: window.NitroxNative.project.contributors.launcher.join(', ')
         };
     },
     methods: {
@@ -157,9 +169,6 @@ export default {
         },
         closeLaunchGameModal() {
             this.isLaunchGameModalVisible = false;
-        },
-        openExternalBrowser(link) {
-            remote.shell.openExternal(link);
         },
         updateCoordinates(e) {
             let buttonFancy = document.getElementById('button-fancy');

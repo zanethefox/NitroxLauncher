@@ -4,7 +4,8 @@ export default {
 
   data () {
     return {
-      settingsActiveTab: "general"
+      settingsActiveTab: "general",
+      nitroxVersion: window.NitroxNative.project.version
     }
   },
 
@@ -68,7 +69,7 @@ export default {
               <div class="d-flex w-100">
                 <div class="px-3 pb-3 pt-3 mr-1 h-small">
                   <h6 class="mb-1 font-11 opacity-5">Version</h6>
-                  <p class="mb-0 font-14 opacity-75" id="version-number">1.0.0</p>
+                  <p class="mb-0 font-14 opacity-75" id="version-number">{{nitroxVersion}}</p>
                 </div>
               </div>
             </ul>
