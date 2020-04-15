@@ -13,7 +13,7 @@
         <div class="sidebar-sticky d-flex align-items-start flex-column">
           <ul class="nav w-100 flex-column mb-auto px-3">
             <li class="nav-item p-4 mb-3">
-              <img src="/img/logoNitrox.svg" width="92px" class="nitrox-logo">
+              <img src="/img/nitrox-logo.svg" width="92px" class="nitrox-logo">
             </li>
             <li class="nav-item mb-1">
               <router-link to="/" class="nav-link">

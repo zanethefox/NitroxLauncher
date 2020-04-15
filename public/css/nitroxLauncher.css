@@ -253,7 +253,7 @@ h6 {
     height: 100%;
     width: 100%;
     z-index: 10;
-    -webkit-mask-size: 23.1%;
+    -webkit-mask-size: 10px;
 }
 
 #min-button::before {
@@ -362,10 +362,6 @@ main {
 
 ::-webkit-scrollbar-thumb:window-inactive {
     opacity: .8;
-}
-
-::selection {
-    background-color: rgba(48, 160, 255, .5);
 }
 
 /*
