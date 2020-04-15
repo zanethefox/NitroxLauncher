@@ -2,9 +2,6 @@
   <!-- Title bar -->
   <header id="titlebar">
     <div id="drag-region">
-      <div id="window-title">
-        <span>Nitrox Launcher</span>
-      </div>
       <div id="window-controls">
         <div class="button" id="min-button"></div>
         <div class="button" id="max-button"></div>

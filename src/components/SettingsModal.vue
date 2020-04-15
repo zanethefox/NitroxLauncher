@@ -5,7 +5,8 @@ export default {
   data () {
     return {
       settingsActiveTab: "general",
-      nitroxVersion: window.NitroxNative.project.version
+      modVersion: window.NitroxNative.project.mod.version,
+      changelogs: window.NitroxNative.project.changelogs
     }
   },
 
@@ -69,7 +70,7 @@ export default {
               <div class="d-flex w-100">
                 <div class="px-3 pb-3 pt-3 mr-1 h-small">
                   <h6 class="mb-1 font-11 opacity-5">Version</h6>
-                  <p class="mb-0 font-14 opacity-75" id="version-number">{{nitroxVersion}}</p>
+                  <p class="mb-0 font-14 opacity-75" id="version-number">{{modVersion}}</p>
                 </div>
               </div>
             </ul>
@@ -173,16 +174,9 @@ export default {
                             <div class="col-md-12">
                                 <h6>Changelog</h6>
                                 <div class="changelog-entry mt-4 mb-5">
-                                    <h3>Nitrox Alpha 1.2.0.1</h3>
-                                    <p class="font-14 opacity-75">March 8th 2020</p>
-                                    <ul>
-                                        <li>Fix for a common instance of infinite loading when reconnecting.</li>
-                                        <li>Fix for base inventories being wiped when reconnecting.</li>
-                                        <li>Fix for vehicles modules being wiped when reconnecting.</li>
-                                        <li>Fix for radio messages being lost when reconnecting.</li>
-                                        <li>Fix for furniture being unpowered when reconnecting.</li>
-                                        <li>Fix for vehicle health being majorly out-of-sync causing seamoths to randomly explode.</li>
-                                    </ul>
+                                    <div class="markdown-body" v-html="changelogs">
+                                        <!-- auto generated -->
+                                    </div>
                                 </div>
                             </div>
                         </div>

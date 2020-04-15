@@ -43,7 +43,7 @@
                 <p>Follow Nitrox</p>
             </div>
             <div class="col-md-9">
-                <div class="bg-on-dark-variant social rounded-lg d-flex justify-content-center disable-select">
+                <div class="bg-on-dark-variant social rounded-lg d-flex justify-content-center py-5 disable-select">
                     <ul class="nav">
                         <li class="nav-item">
                             <a class="nav-link" :href="linkDiscord" target="_blank" data-tooltip="Join the Discord server">
@@ -163,9 +163,9 @@ export default {
     methods: {
         showLaunchGameModal() {
             this.isLaunchGameModalVisible = true;
-            setTimeout(() => {
+            window.NitroxNative.ipc.invoke('game:start').then(() => {
                 this.isLaunchGameModalVisible = false;
-            }, 2000)
+            });
         },
         closeLaunchGameModal() {
             this.isLaunchGameModalVisible = false;
