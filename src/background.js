@@ -56,7 +56,7 @@ function createWindow() {
         icon: Path.join(__dirname, '../src/assets/img/icon.png'),
         webPreferences: {
             nodeIntegration: true, /* this has to be changed for preload */
-            preload: Path.join(__dirname, '../src/', './preload.js')
+            preload: Path.join(__dirname, '../src/', './electron/preload.js')
         },
         show: false
     });
@@ -156,11 +156,24 @@ if (isDevelopment) {
     }
 }
 
+const ServerManager = require('./electron/serverManager');
+
 /* messages */
 ipcMain.handle('game:start', () => new Promise((resolve, reject) => {
     /* start the game and resolve() when it's done */
     setTimeout(() => {
         resolve();
     }, 2000);
-    console.log('test');
 }));
+
+const isUnix = ['linux', 'darwin'].indexOf(process.platform) >= 0;
+const nitroxServer = './nitrox-bins/NitroxServer/server.exe'
+
+const serverData = {
+    path: isUnix ? 'mono' : nitroxServer,
+    args: isUnix ? [nitroxServer] : []
+}
+
+const serverManager = new ServerManager('node.exe', []);
+
+serverManager.registerIpcMain();

@@ -34,7 +34,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="server-console font-mono font-14 overflow-scroll mt-3">
-                        <div class="server-console-output">
+                        <div id="server-console-output">
+                            <p v-html="logscontent"></p>
+                            <!--
                             <p>[19:46:23 Server INFO]: Could not load world: System.IO.InvalidDataException: Persisted state is not valid at NitroxServer.Serialization.World.WorldPersistence.LoadFromFile() in C:\Users\Sunrunner\Desktop\Code\Nitrox\NitroxServer\Serialization\World\WorldPersistence.cs:line 87 creating a new one.</p>
                             <p>[19:46:23 Server DEBUG]: Event Triggerer started!</p>
                             <p>[19:46:23 Server INFO]: World GameMode: Survival</p>
@@ -55,6 +57,7 @@
                             <p>[19:46:23 Server INFO]: Using LiteNetLib as networking library</p>
                             <p>[19:46:23 Server INFO]: Nitrox Server Started</p>
                             <p>[19:46:23 Server INFO]: If using port forwarding, use this IP: 21.1337.420.21</p>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -64,9 +67,9 @@
             <div class="row mt-auto">
                 <div class="col-md-12">
                     <div class="input-group">
-                      <input type="text" class="form-control form-control-lg form-console" placeholder="Message">
+                      <input type="text" class="form-control form-control-lg form-console" placeholder="Message" v-model="textinput" @keydown="inputKeydown">
                       <div class="input-group-append" id="button-addon4">
-                        <button class="btn btn-console btn-send" title="Send message" type="button">
+                        <button class="btn btn-console btn-send" title="Send message" type="button" @click="sendInput">
                             <span class="material-icons">send</span>
                         </button>
                         <button class="btn btn-console btn-stop pr-2" title="Stop server" type="button" @click="showConfirmationModal">
@@ -105,6 +108,38 @@
 <script>
 import ConfirmationModal from '@/components/ConfirmationModal.vue';
 
+const serverController = new window.NitroxNative.ServerController();
+
+const ansiParser = new window.NitroxNative.AnsiParser({
+    fg: '#FFF',
+    bg: '#000',
+    newline: false,
+    escapeXML: true,
+    stream: true,
+    colors: { /* can be cahnged for better styling later */
+        0: '#000',
+        1: '#A00',
+        2: '#0A0',
+        3: '#A50',
+        4: '#00A',
+        5: '#A0A',
+        6: '#0AA',
+        7: '#AAA',
+        8: '#555',
+        9: '#F55',
+        10: '#5F5',
+        11: '#FF5',
+        12: '#55F',
+        13: '#F5F',
+        14: '#5FF',
+        15: '#FFF'
+    }
+});
+
+function createP(text) {
+    return "<p>" + (text || "") + "</p>";
+}
+
 export default {
 
     components: {
@@ -113,16 +148,43 @@ export default {
 
     data() {
         return {
-            isServerStarted: false,
+            isServerStarted: serverController.isRunning(),
+            textinput: "",
+            logscontent: "",
             isConfirmationModalVisible: false,
             x: 0,
             y: 0,
         };
     },
 
+    mounted() {
+        serverController.on('start', () => {
+            this.isServerStarted = serverController.isRunning();
+            if (this.logscontent != "") {
+                this.logscontent += "<br />";
+            }
+            this.logscontent += createP("Sever starting...");
+        });
+        serverController.on('exit', (/** @type {Number} */ code) => {
+            this.isServerStarted = serverController.isRunning();
+            this.logscontent += createP(`Server exited with code ${code}`);
+        });
+        serverController.on('data', (/** @type {String} */ data) => {
+            if (data.startsWith('?25lH H]0;')) return;
+            this.logscontent += createP(ansiParser.toHtml(data));
+        });
+    },
+
     methods: {
         toggleServer() {
-            this.isServerStarted = !this.isServerStarted
+            this.isServerStarted ? serverController.stop() : serverController.start();
+        },
+        sendInput() {
+            serverController.write(this.textinput + "\r\n");
+            this.textinput = "";
+        },
+        inputKeydown(e) {
+            if (e.keyCode == 13) this.sendInput();
         },
         updateCoordinates: function(event) {
             this.x = event.layerX;

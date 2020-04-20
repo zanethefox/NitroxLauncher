@@ -1,5 +1,7 @@
-const { /*contextBridge,*/ ipcRenderer } = require('electron');
-const project = require('./project');
+const { /*contextBridge,*/ ipcRenderer, remote } = require('electron');
+const project = require('../project');
+const ServerController = require('./serverController');
+const AnsiParser = require('ansi-to-html');
 
 let api = {
     project: project,
@@ -19,7 +21,11 @@ let api = {
         removeAllListeners(channel) {
             ipcRenderer.removeAllListeners(channel);
         }
-    }
+    },
+    ServerController,
+    AnsiParser,
+    win: remote.getCurrentWindow(),
+    platform: process.platform
 }
 
 // contextBridge.exposeInMainWorld('NitroxNative', api);
