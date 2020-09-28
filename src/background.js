@@ -44,8 +44,8 @@ function createLoadingWindow() {
 function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 1024,
-    height: 612,
+    width: 1124,
+    height: 800,
     minWidth: 1024,
     minHeight: 612,
     frame: false,

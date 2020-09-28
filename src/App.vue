@@ -66,19 +66,6 @@
             </li>
           </ul>
 
-          <ul class="nav w-100 bg-darkest px-3">
-            <div class="d-flex w-100">
-              <div class="px-3 pb-3 pt-3 mr-1 h-small">
-                <h6 class="mb-1 font-11 opacity-5">Version</h6>
-                <p class="mb-0 font-14 opacity-75" id="version-number">1.0.0</p>
-              </div>
-              <div class="ml-auto d-none">
-                <a class="nav-link sm-btn" href="#" data-toggle="tooltip" data-placement="top" title="Check for updates">
-                  <span class="material-icons">update</span>
-                </a>
-              </div>
-            </div>
-          </ul>
         </div>
       </nav>
     </div>
