@@ -8,8 +8,9 @@
     --bg-darker: #1F1F22;
     --bg-on-dark: #1F1F22;
     --bg-on-dark-variant: #3D3E41;
+    --bg-material: rgba(40, 41, 44, 0.85);
     --bg-material-1: rgba(40,41,44,0.75);
-
+    --bg-material-2: rgba(40,41,44,0.55);
     /* Main colours */
     --color-primary: #007bff;
 
@@ -212,8 +213,13 @@ h6 {
 }
 
 .bg-material-1 {
-  background: var(--bg-material-1);
+  background: var(--bg-material);
   backdrop-filter: blur(20px) saturate(120%);
+}
+
+.bg-material-2 {
+  background: var(--bg-material-2);
+  backdrop-filter: blur(20px) saturate(200%);
 }
 
 .disable-select {
@@ -407,28 +413,24 @@ main {
 }
 
 ::-webkit-scrollbar {
-    width: 14px;
-    /* width of the entire scrollbar */
-}
-
-::-webkit-scrollbar-track {
-    background: none;
-    /* color of the tracking area */
-    border: 4px solid var(--bg-on-dark);
-    /* creates padding around scroll thumb */
+  width: 9px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--black-5);
-    /* color of the scroll thumb */
-    border-radius: 20px;
-    /* roundness of the scroll thumb */
-    border: 4px solid var(--bg-on-dark);
-    /* creates padding around scroll thumb */
+  background: rgba(255, 255, 255, 0.1);
 }
 
-::-webkit-scrollbar-thumb:window-inactive {
-    background: var(--black-375);
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(255,255,255,0.2);
 }
 
 /*
@@ -549,7 +551,7 @@ main {
 }
 
 .sidebar .nav-link, .btn-icon {
-    font-size: var(--font-14);
+    font-size: var(--font-16);
     font-weight: 400;
     color: var(--white-5);
     transition: color ease-in-out .075s, background-color ease-in-out .075s;
@@ -557,7 +559,8 @@ main {
 }
 
 .sidebar .nav-link .material-icons, .btn-icon {
-    margin-right: 4px;
+    margin-right: 8px;
+    margin-top: -2px;
     color: var(--white-5);
     vertical-align: middle;
     transition: color ease-in-out .075s;
@@ -580,7 +583,7 @@ main {
 }
 
 .sidebar .nav-link svg {
-    margin-right: 4px;
+    margin-right: 8px;
 }
 
 .sidebar .nav-link.router-link-exact-active,
@@ -676,14 +679,14 @@ main {
 
 .home-image {
     background: linear-gradient(0deg, rgba(31, 31, 34, 1) 0%, rgba(31, 31, 34, 0) 100%), url('../img/preview.jpg');
-    min-height: 480px;
+    min-height: 500px;
     background-position: center;
     background-size: cover;
     margin-top: -32px;
 }
 
 .cta-row {
-  margin-top: -10rem;
+  margin-top: -12rem;
 }
 
 .line {

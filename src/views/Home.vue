@@ -7,7 +7,7 @@
         <div class="home-image d-flex">
         </div>
 
-        <div class="col-md-9 col-lg-9 ml-auto pl-4">
+        <div class="col-md-9 col-lg-9 ml-auto pl-5 pr-5">
           <div class="row cta-row">
               <div class="col-md-7">
                 <h1>Subnautica Nitrox</h1>
@@ -16,7 +16,7 @@
                 <p class="size-16 opacity-75 mt-3">Start your Subnautica adventure in multiplayer mode together with your friends, powered by the Nitrox mod.</p>
               </div>
               <div class="col-md-5 start-game-buttons">
-                <div class="p-4 rounded-lg bg-material-1">
+                <div class="p-4 rounded-lg bg-material-2">
                   <button class="btn btn-primary btn-lg text-uppercase btn-block button-fancy" id="button-fancy" @click="showLaunchGameModal" v-on:mousemove="updateCoordinates">
                       <span>
                           Play
@@ -26,6 +26,18 @@
                   <a class="btn btn-secondary btn-lg text-uppercase btn-block font-14" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica singleplayer">Singleplayer</a>
                   <p class="font-14 opacity-5 mb-n2 mt-3 text-center">Nitrox Alpha 1.4.0.0</p>
                 </div>
+              </div>
+          </div>
+
+          <div class="row mt-5 mr-n1">
+              <div class="col-md-4 pr-1">
+                  <img src="../assets/img/slider/subnautica1.jpg" alt="Subnautica" class="img-fluid rounded-lg">
+              </div>
+              <div class="col-md-4 pr-1">
+                  <img src="../assets/img/slider/subnautica2.jpg" alt="Subnautica" class="img-fluid rounded-lg">
+              </div>
+              <div class="col-md-4 pr-1">
+                  <img src="../assets/img/slider/subnautica3.jpg" alt="Subnautica" class="img-fluid rounded-lg">
               </div>
           </div>
 

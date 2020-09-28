@@ -117,7 +117,6 @@ export default {
   left: 0;
   right: 0;
   background-color: rgba(26, 26, 29, 0.75);
-  /* backdrop-filter: blur(20px); */
   display: flex;
   justify-content: center;
   align-items: center;
