@@ -47,10 +47,10 @@ export default {
           </div>
           <div class="row m-0">
               <div class="col-6 pr-2">
-                  <button type="button" name="button" class="btn btn-secondary font-16 btn-lg btn-block" @click="close" aria-label="Close modal">Go back</button>
+                  <button type="button" name="button" class="btn btn-secondary ripple font-16 btn-lg btn-block" @click="close" aria-label="Close modal">Go back</button>
               </div>
               <div class="col-6 pl-2">
-                  <button type="button" name="button" class="btn btn-primary font-16 btn-lg btn-block" @click="confirmStopServer">Yep!</button>
+                  <button type="button" name="button" class="btn btn-primary ripple font-16 btn-lg btn-block" @click="confirmStopServer">Yep!</button>
               </div>
           </div>
       </section>

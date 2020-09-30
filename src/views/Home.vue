@@ -23,7 +23,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1 opacity-75 pr-3">
-                                    <a href="#" class="btn btn-secondary img-round p-0 m-0"><span class="material-icons p-2">add</span></a>
+                                    <a href="#" class="btn btn-secondary ripple img-round p-0 m-0"><span class="material-icons p-2">add</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -51,7 +51,7 @@
                                 <h6 class="pt-0 mb-1 text-uppercase">multiplayer</h6>
                             </span>
                         </button>
-                        <a class="btn btn-secondary btn-lg text-uppercase btn-block font-14" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica singleplayer">Singleplayer</a>
+                        <a class="btn btn-secondary ripple btn-lg text-uppercase btn-block font-14" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica singleplayer">Singleplayer</a>
                         <p class="font-14 opacity-5 mb-n2 mt-3 text-center">Nitrox Alpha 1.4.0.0</p>
                     </div>
                 </div>

@@ -21,7 +21,7 @@
           </li>
 
         <li class="nav-item mb-3 mt-4">
-            <a class="btn btn-secondary btn-lg text-uppercase btn-block font-14" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica singleplayer">Find new servers</a>
+            <a class="btn btn-secondary ripple btn-lg text-uppercase btn-block font-14" href="#" data-toggle="tooltip" data-placement="top" title="Find new servers">Find new servers</a>
         </li>
         </div>
 

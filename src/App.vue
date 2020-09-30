@@ -38,17 +38,17 @@
               </svg>
             </li>
             <li class="nav-item mb-1">
-              <router-link to="/" class="nav-link">
+              <router-link to="/" class="nav-link ripple">
                 <span class="h-small">Play game</span>
               </router-link>
             </li>
             <li class="nav-item mb-1">
-              <router-link to="/server" class="nav-link">
+              <router-link to="/server" class="nav-link ripple">
                 <span class="h-small">Server</span>
               </router-link>
             </li>
             <li class="nav-item mb-1">
-              <router-link to="/news" class="nav-link">
+              <router-link to="/news" class="nav-link ripple">
                 <span class="h-small">News</span>
               </router-link>
             </li>
@@ -58,7 +58,7 @@
               </a>
             </li>
             <li class="nav-item mb-1">
-              <router-link to="/login" class="nav-link">
+              <router-link to="/login" class="nav-link ripple">
                 <span class="h-small">Login</span>
               </router-link>
             </li>
