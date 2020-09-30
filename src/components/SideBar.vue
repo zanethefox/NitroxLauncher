@@ -4,7 +4,7 @@
     <div class="sidebar-sticky d-flex align-items-start flex-column pt-0 px-4">
       <!-- Sidebar -->
       <ul class="nav w-100 flex-column mb-auto pr-2">
-
+        <div class="sticky-top bg-darker">
           <li class="nav-item mb-1">
               <div class="bg-darker p-0 mt-3 rounded-lg">
                 <div class="media">
@@ -20,11 +20,13 @@
               </div>
           </li>
 
-        <li class="nav-item mb-1 mt-4">
+        <li class="nav-item mb-3 mt-4">
             <a class="btn btn-secondary btn-lg text-uppercase btn-block font-14" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica singleplayer">Find new servers</a>
         </li>
+        </div>
 
-        <li class="nav-item mt-4 mb-1">
+
+        <li class="nav-item mt-2 mb-1">
           <h6>Recent Servers</h6>
         </li>
 
