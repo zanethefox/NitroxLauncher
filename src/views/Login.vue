@@ -2,6 +2,77 @@
 <div class="login">
 
     <main role="main" class="col-md-12 px-4 mt-4 d-flex justify-content-center" style="height: 100vh;">
+      <Particles
+   id="tsparticles"
+   :options="{
+         background: {
+             color: {
+                 value: ''
+             }
+         },
+         fpsLimit: 30,
+         interactivity: {
+             detectsOn: 'canvas',
+             events: {
+                 onClick: {
+                     enable: true,
+                     mode: 'push'
+                 },
+
+                 resize: true
+             },
+             modes: {
+                 bubble: {
+                     distance: 400,
+                     duration: 2,
+                     opacity: 0.5,
+                     size: 40
+                 },
+                 push: {
+                     quantity: 4
+                 },
+                 repulse: {
+                     distance: 200,
+                     duration: 0.4
+                 }
+             }
+         },
+         particles: {
+             color: {
+                 value: '#ffffff'
+             },
+             collisions: {
+                 enable: false
+             },
+             move: {
+                 direction: 'top',
+                 enable: true,
+                 outMode: 'out',
+                 random: true,
+                 speed: 1.5,
+                 straight: false
+             },
+             number: {
+                 density: {
+                     enable: true,
+                     value_area: 800
+                 },
+                 value: 20
+             },
+             opacity: {
+                 value: 0.5
+             },
+             shape: {
+                 type: 'circle'
+             },
+             size: {
+                 random: true,
+                 value: 5
+             }
+         },
+         detectRetina: true
+     }"
+ />
         <div class="row px-3">
             <div class="col-md-12">
                     <transition name="fade-in" mode="out-in">
@@ -43,6 +114,11 @@
 </template>
 
 <style media="screen">
+#tsparticles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
     .login {
       z-index: 2000;
       position: relative;
