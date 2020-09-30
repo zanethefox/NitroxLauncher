@@ -22,6 +22,7 @@
     --white-1: rgba(255, 255, 255, 0.1);
     --white-2: rgba(255, 255, 255, 0.2);
     --white-25: rgba(255, 255, 255, 0.25);
+    --white-35: rgba(255, 255, 255, 0.35);
     --white-5: rgba(255, 255, 255, 0.5);
     --black-25: rgba(0, 0, 0, 0.25);
     --black-375: rgba(0, 0, 0, .375);
@@ -400,8 +401,8 @@ nav {
 }
 
 main {
-    padding-top: 112px;
-    height: 100vh;
+  margin-top: 110px !important;
+  height: calc(100vh - 110px);
 }
 
 
@@ -631,6 +632,10 @@ main {
     font-weight: bold;
 }
 
+.btn-icon:hover .material-icons {
+    font-weight: normal;
+}
+
 .sidebar .nav-link.router-link-exact-active .material-icons {
     color: inherit;
 }
@@ -723,29 +728,88 @@ main {
     background-size: cover;
 }
 
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    color: rgba(255, 255, 255, .75);
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
 .profiles {
     background: linear-gradient(180deg, rgba(31, 31, 34, 1) 20%, rgba(31, 31, 34, .66) 60%, rgba(31, 31, 34, 0) 100%);
     margin-bottom: -170px;
     z-index: 1;
     padding-bottom: 110px;
+        position: sticky;
 }
 
 .img-round {
     border-radius: 100px;
 }
 
-.profiles img {
-    transition: all ease-in-out .12s
+.profiles a {
+  position: relative;
 }
 
-.profiles img:hover {
+.profiles a img {
+    transition: all ease-in-out .15s;
+    border-radius: 32px;
+    display: block;
+    min-width: 42px;
+}
+
+.profiles a img:hover {
     border-radius: var(--rounded-lg);
     filter: grayscale(0%);
     opacity: 1;
 }
 
+.profiles a img:active {
+    transform: translateY(1px);
+}
+
+.profiles .nav-item.active a::after {
+    border-bottom: 3px solid #fff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    bottom: -12px;
+    content: " ";
+    position: absolute;
+    margin: 0 5px;
+    border-top: 0px;
+    width: 32px;
+    display: block;
+}
+
 .offline {
     filter: grayscale(100%);
+}
+
+.status.badge {
+  width: 6px;
+  height: 6px;
+  padding: 4px;
+  right: 14px;
+  bottom: 0px;
+  position: absolute;
+  display: block;
+  border: 3px solid var(--bg-darker);
+  z-index: 1;
 }
 
 .cta-row {

@@ -11,7 +11,7 @@
     <div id="nav">
       <nav class="col-md-12 d-md-block sidebar sidebar-main disable-select p-0">
         <div class="d-flex align-items-start">
-          <ul class="nav w-100 flex-row mb-auto px-3 pt-4 pb-2">
+          <ul class="nav w-100 flex-row mb-auto px-3 pt-3 pb-3">
             <li class="nav-item px-4 pt-2">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.71 65.52" width="92px" fill="white" class="nitrox-logo">
                 <title>Nitrox</title>
@@ -65,6 +65,7 @@
 
     <router-view/>
 
+    <side-bar/>
 
   </div>
 </template>
@@ -72,13 +73,15 @@
 <script>
 import TitleBar from '@/components/TitleBar.vue'
 import SettingsModal from './components/SettingsModal.vue';
+import SideBar from './components/SideBar.vue';
 
 export default {
   name: 'Home',
 
   components: {
     TitleBar,
-    SettingsModal
+    SettingsModal,
+    SideBar
   },
 
   data () {

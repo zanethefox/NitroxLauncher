@@ -1,8 +1,8 @@
 <template>
 <div class="news">
 
-    <main role="main" class="col-md-12 mr-auto pl-4">
-        <div class="row mt-4">
+    <main role="main" class="col-md-9 mr-auto px-4">
+        <div class="row px-3">
             <div class="col-md-12">
 
                 <template v-if="!error">

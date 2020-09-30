@@ -3,15 +3,15 @@
 
     <confirmation-modal v-show="isConfirmationModalVisible" @close="closeConfirmationModal" @stop-server="toggleServer()"/>
 
-    <main role="main" class="col-md-12 mr-auto px-4 overflow-hidden">
+    <main role="main" class="col-md-9 mr-auto pl-4 overflow-hidden">
         <transition name="server-fade" mode="out-in">
 
         <div class="server-start-page" key="1" v-if="!this.isServerStarted">
-            <div class="row">
+            <div class="row px-3">
                 <!-- Header -->
-                <div class="col-md-12 text-center pt-3">
-                    <div class="py-5">
-                        <h3 class="font-400">Nitrox server</h3>
+                <div class="col-md-12 text-center pt-2">
+                    <div class="py-4">
+                        <h2 class="font-weight-bold">Nitrox server</h2>
                         <p class="opacity-75 mt-3">Welcome to your Subnautica multiplayer server!</p>
                     </div>
                 </div>
@@ -29,11 +29,11 @@
                 </div>
             </div>
         </div>
-        <div class="server-console-page" key="2" v-else>
+        <div class="server-console-page pl-3 pr-0" key="2" v-else>
             <!-- Console output -->
             <div class="row">
                 <div class="col-md-12">
-                    <div class="server-console font-mono font-14 overflow-scroll mt-3">
+                    <div class="server-console font-mono font-14 overflow-scroll mt-1">
                         <div class="server-console-output">
                             <p>[19:46:23 Server INFO]: Could not load world: System.IO.InvalidDataException: Persisted state is not valid at NitroxServer.Serialization.World.WorldPersistence.LoadFromFile() in C:\Users\Sunrunner\Desktop\Code\Nitrox\NitroxServer\Serialization\World\WorldPersistence.cs:line 87 creating a new one.</p>
                             <p>[19:46:23 Server DEBUG]: Event Triggerer started!</p>

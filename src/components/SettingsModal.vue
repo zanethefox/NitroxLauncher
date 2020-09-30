@@ -250,17 +250,6 @@ export default {
   height: calc(100vh - 24px);
 }
 
-.modal::-webkit-scrollbar-track {
-  background: none;        /* color of the tracking area */
-  border: 4px solid #333437;  /* creates padding around scroll thumb */
-}
-
-.modal::-webkit-scrollbar-thumb {
-  background-color: rgba(0,0,0,.5);    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 4px solid #333437;  /* creates padding around scroll thumb */
-}
-
 .modal-header,
 .modal-footer {
   padding: 15px;
