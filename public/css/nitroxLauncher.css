@@ -11,6 +11,7 @@
     --bg-material: rgba(40, 41, 44, 0.85);
     --bg-material-1: rgba(40,41,44,0.75);
     --bg-material-2: rgba(40,41,44,0.55);
+    --bg-material-3: rgba(56, 58, 62, 0.55);
     /* Main colours */
     --color-primary: #007bff;
 
@@ -41,8 +42,9 @@
 
     /* Border radius */
     --rounded-sm: 3px;
-    --rounded-md: 6px;
+    --rounded-md: 8px;
     --rounded-lg: 10px;
+    --rounded-xl: 100px;
 }
 
 /*
@@ -192,6 +194,10 @@ h6 {
     font-size: var(--font-11);
 }
 
+.rounded-md {
+  border-radius: var(--rounded-md)!important;
+}
+
 .rounded-lg {
   border-radius: var(--rounded-lg)!important;
 }
@@ -219,6 +225,11 @@ h6 {
 
 .bg-material-2 {
   background: var(--bg-material-2);
+  backdrop-filter: blur(20px) saturate(200%);
+}
+
+.bg-material-3 {
+  background: var(--bg-material-3);
   backdrop-filter: blur(20px) saturate(200%);
 }
 
@@ -580,7 +591,7 @@ main {
     font-weight: 400;
     color: var(--white-5);
     transition: color ease-in-out .075s, background-color ease-in-out .075s;
-    border-radius: var(--rounded-md);
+    border-radius: var(--rounded-xl);
 }
 
 .sidebar .nav-link .material-icons, .btn-icon {

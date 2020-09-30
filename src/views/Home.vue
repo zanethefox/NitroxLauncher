@@ -6,9 +6,9 @@
     <main role="main" class="col-md-9 p-0 no-scrollbar" style="margin-top: 120px!important; height: calc(100vh - 120px);">
         <div class="profiles pl-4 pr-4 pt-0">
             <div class="profile-switcher pl-3 pr-1">
-                <nav class="col-md-12 d-md-block disable-select p-0 mt-0 rounded-lg bg-white-1">
+                <nav class="col-md-12 d-md-block disable-select p-0 mt-0 rounded-lg bg-material-3 shadow-lg" style="z-index:105">
                         <div class="d-flex align-items-start py-1">
-                            <ul class="nav w-100 flex-row mb-auto px-3 pt-2 pb-2">
+                            <ul class="nav w-100 flex-row mb-auto px-3 pt-2 pb-1">
                                 <li class="nav-item my-auto mr-4 ml-2">
                                     <h6 class="pt-0 mb-1 text-uppercase size-11">Profiles</h6>
                                 </li>
@@ -23,7 +23,6 @@
                                 </li>
                                 <li class="nav-item mb-1 opacity-75">
                                     <a href="#" class="btn btn-secondary img-round p-0 m-0"><span class="material-icons p-2">add</span></a>
-
                                 </li>
                             </ul>
                         </div>
@@ -44,7 +43,7 @@
                     <p class="size-16 opacity-75 mt-3">Start your Subnautica adventure in multiplayer mode together with your friends, powered by the Nitrox mod.</p>
                 </div>
                 <div class="col-md-5 start-game-buttons">
-                    <div class="p-4 rounded-lg bg-material-2">
+                    <div class="p-4 rounded-lg bg-material-3">
                         <button class="btn btn-primary btn-lg text-uppercase btn-block button-fancy" id="button-fancy" @click="showLaunchGameModal" v-on:mousemove="updateCoordinates">
                             <span>
                                 Play
@@ -59,13 +58,13 @@
 
             <div class="row mt-5 mr-n1">
                 <div class="col-md-4 pr-1">
-                    <img src="../assets/img/slider/subnautica1.jpg" alt="Subnautica" class="img-fluid w-100 rounded-lg">
+                    <img src="../assets/img/slider/subnautica1.jpg" alt="Subnautica" class="img-fluid w-100 rounded-md">
                 </div>
                 <div class="col-md-4 pr-1">
-                    <img src="../assets/img/slider/subnautica2.jpg" alt="Subnautica" class="img-fluid w-100 rounded-lg">
+                    <img src="../assets/img/slider/subnautica2.jpg" alt="Subnautica" class="img-fluid w-100 rounded-md">
                 </div>
                 <div class="col-md-4 pr-1">
-                    <img src="../assets/img/slider/subnautica3.jpg" alt="Subnautica" class="img-fluid w-100 rounded-lg">
+                    <img src="../assets/img/slider/subnautica3.jpg" alt="Subnautica" class="img-fluid w-100 rounded-md">
                 </div>
             </div>
 
