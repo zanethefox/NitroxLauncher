@@ -13,17 +13,58 @@
                                     <h6 class="pt-0 mb-1 text-uppercase size-11">Profiles</h6>
                                 </li>
                                 <li class="nav-item mb-1 mr-3 active">
-                                    <a >
+                                    <a href="#">
                                         <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid rounded-lg disable-select" alt="Subnautica Icon" width="42px">
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1 mr-3">
-                                  <a >
+                                  <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
+                                </li>
+                                <li class="nav-item mb-1 mr-3">
+                                  <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
+                                </li><li class="nav-item mb-1 mr-3">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
+                                </li><li class="nav-item mb-1 mr-3">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
+                                </li><li class="nav-item mb-1 mr-3">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
+                                </li><li class="nav-item mb-1 mr-3">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
+                                </li><li class="nav-item mb-1 mr-3">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
+                                </li><li class="nav-item mb-1 mr-3">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
+                                </li><li class="nav-item mb-1 mr-3">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
+                                </li><li class="nav-item mb-1 mr-3">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
+                                </li><li class="nav-item mb-1 mr-3">
+                                    <a href="#">
                                         <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1 opacity-75 pr-3">
-                                    <a  class="btn btn-secondary img-round p-0 m-0"><span class="material-icons p-2">add</span></a>
+                                    <a href="#" class="btn btn-secondary img-round p-0 m-0"><span class="material-icons p-2">add</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -39,8 +80,8 @@
             <div class="row cta-row">
                 <div class="col-md-7">
                     <h1>Subnautica Nitrox</h1>
-                    <a  class="text-white opacity-75 font-weight-bold mr-3">Default Profile</a>
-                    <a  class="text-white opacity-75 font-weight-bold">Steam</a>
+                    <a href="#" class="text-white opacity-75 font-weight-bold mr-3">Default Profile</a>
+                    <a href="#" class="text-white opacity-75 font-weight-bold">Steam</a>
                     <p class="size-16 opacity-75 mt-3">Start your Subnautica adventure in multiplayer mode together with your friends, powered by the Nitrox mod.</p>
                 </div>
                 <div class="col-md-5 start-game-buttons">
@@ -51,7 +92,7 @@
                                 <h6 class="pt-0 mb-1 text-uppercase">multiplayer</h6>
                             </span>
                         </button>
-                        <a class="btn btn-secondary btn-lg text-uppercase btn-block font-14"  data-toggle="tooltip" data-placement="top" title="Play Subnautica singleplayer">Singleplayer</a>
+                        <a class="btn btn-secondary btn-lg text-uppercase btn-block font-14" href="#" data-toggle="tooltip" data-placement="top" title="Play Subnautica singleplayer">Singleplayer</a>
                         <p class="font-14 opacity-5 mb-n2 mt-3 text-center">Nitrox Alpha 1.4.0.0</p>
                     </div>
                 </div>
@@ -78,27 +119,27 @@
                     <div class="bg-material-1 social rounded-lg d-flex justify-content-center py-5 disable-select">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link"  target="_blank" @click.prevent="openExternalBrowser('https://discord.gg/E8B4X9s')" draggable="false" data-tooltip="Join the Discord server">
+                                <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://discord.gg/E8B4X9s')" draggable="false" data-tooltip="Join the Discord server">
                                     <img src="../assets/img/svg/discord.svg" alt="Discord Logo">
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  target="_blank" @click.prevent="openExternalBrowser('https://twitter.com/modnitrox')" draggable="false" data-tooltip="Follow on Twitter">
+                                <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://twitter.com/modnitrox')" draggable="false" data-tooltip="Follow on Twitter">
                                     <img src="../assets/img/svg/twitter.svg" alt="Twitter">
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  target="_blank" @click.prevent="openExternalBrowser('https://www.reddit.com/r/SubnauticaNitrox/')" draggable="false" data-tooltip="Join the Subreddit">
+                                <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://www.reddit.com/r/SubnauticaNitrox/')" draggable="false" data-tooltip="Join the Subreddit">
                                     <img src="../assets/img/svg/reddit.svg" alt="Reddit">
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  target="_blank" @click.prevent="openExternalBrowser('https://github.com/SubnauticaNitrox/Nitrox')" draggable="false" data-tooltip="Contribute on GitHub">
+                                <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://github.com/SubnauticaNitrox/Nitrox')" draggable="false" data-tooltip="Contribute on GitHub">
                                     <img src="../assets/img/svg/github.svg" alt="GitHub" width="24px">
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  target="_blank" @click.prevent="openExternalBrowser('https://nitrox.rux.gg')" draggable="false" data-tooltip="Visit the official website">
+                                <a class="nav-link" href="#" target="_blank" @click.prevent="openExternalBrowser('https://nitrox.rux.gg')" draggable="false" data-tooltip="Visit the official website">
                                     <img src="../assets/img/svg/website.svg" alt="Website" width="26px">
                                 </a>
                             </li>
