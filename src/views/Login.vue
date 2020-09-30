@@ -1,47 +1,40 @@
 <template>
 <div class="login">
 
-    <main role="main" class="col-md-12 mr-auto px-4">
+    <main role="main" class="col-md-12 px-4 mt-4 d-flex justify-content-center" style="height: 100vh;">
         <div class="row px-3">
             <div class="col-md-12">
-
-                <template v-if="!error">
                     <transition name="fade-in" mode="out-in">
                         <!-- Login Dialog -->
+                        <div class="col-md-5 m-auto my-auto">
+                            <div class="bg-material-1 p-5 rounded-lg">
+                              <h3>Login</h3>
+                              <p class="opacity-75 mb-4">Sign in to sync your friends, profile and get the best experience.</p>
+                              <button class="btn btn-secondary btn-lg text-uppercase btn-block button-fancy text-left font-14 font-weight-bold py-3" id="button-fancy" v-on:mousemove="updateCoordinates">
+                                  <span class="login steam p-4">
+                                      <img src="../assets/img/login/steam.svg" alt="Steam" width="24px">
+                                  </span>
+                                  <span>
+                                      Continue with Steam
+                                  </span>
+                              </button>
+                              <button class="btn btn-secondary login btn-lg text-uppercase btn-block button-fancy text-left font-14 font-weight-bold py-3" id="button-fancy-2" v-on:mousemove="updateCoordinates2">
+                                  <span class="login epic p-4">
+                                    <img src="../assets/img/login/epic.png" alt="Epic" height="24px" style="margin: 0 2px;">
+                                  </span>
+                                  <span>
+                                      Continue with Epic
+                                  </span>
+                              </button>
 
-                    </transition>
-
-                    <!-- Skeleton while loading posts -->
-                    <div :key="2" v-if="!posts">
-                        <div class="news-loading mb-5">
-                            <div class="news-image"/>
-                            <div class="news-h6"/>
-                            <div class="news-h4"/>
-                            <div class="d-flex">
-                                <div class="news-p"/>
-                                <div class="news-p"/>
-                            </div>
-                            <div class="d-flex">
-                                <div class="news-p"/>
-                                <div class="news-p"/>
-                                <div class="news-p"/>
+                              <router-link to="/" class="text-decoration-none">
+                                <button class="btn btn-link text-white text-decoration-none text-uppercase button-fancy btn-block font-14 font-weight-bold mt-4" id="button-fancy-3" v-on:mousemove="updateCoordinates3">
+                                        Or skip Login
+                                </button>
+                              </router-link>
                             </div>
                         </div>
-                    </div>
-                </template>
-
-                <template v-else>
-                    <!-- Offline / Timeout -->
-                    <div :key="3" class="pt-5">
-                      <div class="text-center align-self-center mt-5 pt-5">
-                          <h3 class="font-400 pt-5">Something went wrong</h3>
-                          <p class="opacity-75">Check your internet connection and try again.</p>
-                          <button type="button" name="button" class="btn btn-primary px-4 font-16 mt-4" @click="loadPosts()">Retry</button>
-                      </div>
-                    </div>
-
-                </template>
-
+                    </transition>
             </div>
         </div>
     </main>
@@ -50,6 +43,24 @@
 </template>
 
 <style media="screen">
+    .login {
+      z-index: 2000;
+      position: relative;
+    }
+    .btn .epic {
+        background-color: #353535!important;
+    }
+    .btn .steam {
+        background-color: #145c8f!important;
+    }
+    .btn .login {
+        margin-left: -1rem;
+        margin-right: 1rem;
+        z-index: 1;
+    }
+    .button-fancy::before {
+      z-index:2;
+    }
     .fade-in-enter-active,
     .fade-in-leave-active {
         transition: all .35s ease-in-out;
@@ -60,113 +71,62 @@
         opacity: 0;
     }
 
-    /* Animation: Blinking effect */
-    @keyframes blink {
-      0% {
-        opacity: .1;
-      }
 
-      50% {
-        opacity: .3;
-      }
-
-      100% {
-        opacity: .1;
-      }
-    }
-
-    .news-loading .news-image,
-    .news-loading .news-h6,
-    .news-loading .news-h4,
-    .news-loading .news-p {
-        animation-name: blink;
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-        animation-fill-mode: both;
-        background: var(--bg-on-dark-variant);
-
-    }
-    .news-loading .news-image {
-        height: 368px;
-        width: 100%;
-    }
-    .news-loading .news-h6 {
-        height: 14px;
-        width: 20%;
-        margin-top: 1.5rem;
-        margin-bottom: .5rem;
-    }
-    .news-loading .news-h4 {
-        height: 28px;
-        width: 80%;
-        margin-top: .5rem;
-        margin-bottom: .5rem;
-    }
-    .news-loading .news-p {
-        height: 16px;
-        margin-top: 0rem;
-        margin-bottom: .4rem;
-        width: 100%;
-        margin-right: 8px;
-    }
-    .news-loading .news-p:first-child {
-        width: 60%;
-    }
-    .news-loading .news-p:nth-child(2) {
-        width: 40%;
-    }
-    .news-loading .news-p:nth-child(3) {
-        width: 60%;
-    }
-    .news-loading .news-p:last-child {
-        width: 40%;
-        margin-right: 0px;
-    }
 </style>
 
 <script>
 /* eslint no-unused-vars:0 */
 
-const { remote } = require('electron');
-const axios = require('axios').default;
-
-import NewsPost from '@/components/NewsPost.vue'
+const {
+    remote
+} = require('electron');
 
 export default {
-    name: 'Home',
+    name: 'Login',
     components: {
-        NewsPost,
     },
     data() {
         return {
             isSettingsModalVisible: false,
-            posts: '',
-            error: false,
+            isLaunchGameModalVisible: false,
+            x: 0,
+            y: 0,
         };
     },
     methods: {
+        showLaunchGameModal() {
+            this.isLaunchGameModalVisible = true;
+            setTimeout(() => {
+                this.isLaunchGameModalVisible = false;
+            }, 2000)
+        },
+        closeLaunchGameModal() {
+            this.isLaunchGameModalVisible = false;
+        },
         openExternalBrowser(link) {
             remote.shell.openExternal(link);
         },
-        loadPosts() {
-            let that = this
-            axios.get("https://nitroxblog.rux.gg/wp-json/wp/v2/posts")
-                .then(function (response) {
-                    that.posts = response.data;
-                    that.error = false;
-                })
-                .catch(function (error) {
-                    that.error = true;
-                })
+        updateCoordinates(e) {
+            let buttonFancy = document.getElementById('button-fancy');
+            this.x = e.layerX;
+            this.y = e.layerY;
+            buttonFancy.style.setProperty('--x', this.x + 'px');
+            buttonFancy.style.setProperty('--y', this.y + 'px');
         },
-        decoder(str) {
-            let textArea = document.createElement("textarea");
-            textArea.innerHTML = str;
-            return textArea.value;
+        updateCoordinates2(e) {
+            let buttonFancy = document.getElementById('button-fancy-2');
+            this.x = e.layerX;
+            this.y = e.layerY;
+            buttonFancy.style.setProperty('--x', this.x + 'px');
+            buttonFancy.style.setProperty('--y', this.y + 'px');
         },
-    },
-    mounted() {
-        this.loadPosts()
+        updateCoordinates3(e) {
+            let buttonFancy = document.getElementById('button-fancy-3');
+            this.x = e.layerX;
+            this.y = e.layerY;
+            buttonFancy.style.setProperty('--x', this.x + 'px');
+            buttonFancy.style.setProperty('--y', this.y + 'px');
+        },
     },
 };
 </script>

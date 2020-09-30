@@ -208,7 +208,7 @@ export default {
 <style>
 .esc-text {
   position: fixed;
-  top: 92px;
+  top: 102px;
   right: 49px;
   letter-spacing: 0.5px;
   font-size: 10px;
@@ -246,8 +246,19 @@ export default {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 24px;
-  height: calc(100vh - 24px);
+  margin-top: 34px;
+  height: calc(100vh - 34px);
+}
+
+.modal::-webkit-scrollbar-track {
+  background: none;        /* color of the tracking area */
+  border: 4px solid #333437;  /* creates padding around scroll thumb */
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.5);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 4px solid #333437;  /* creates padding around scroll thumb */
 }
 
 .modal-header,

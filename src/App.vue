@@ -57,6 +57,11 @@
                 <span class="h-small">Settings</span>
               </a>
             </li>
+            <li class="nav-item mb-1">
+              <router-link to="/login" class="nav-link">
+                <span class="h-small">Login</span>
+              </router-link>
+            </li>
           </ul>
 
         </div>

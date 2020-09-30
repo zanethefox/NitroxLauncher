@@ -22,47 +22,6 @@
                                         <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
                                     </a>
                                 </li>
-                                <li class="nav-item mb-1 mr-3">
-                                  <a href="#">
-                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
-                                    </a>
-                                </li><li class="nav-item mb-1 mr-3">
-                                    <a href="#">
-                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
-                                    </a>
-                                </li><li class="nav-item mb-1 mr-3">
-                                    <a href="#">
-                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
-                                    </a>
-                                </li><li class="nav-item mb-1 mr-3">
-                                    <a href="#">
-                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
-                                    </a>
-                                </li><li class="nav-item mb-1 mr-3">
-                                    <a href="#">
-                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
-                                    </a>
-                                </li><li class="nav-item mb-1 mr-3">
-                                    <a href="#">
-                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
-                                    </a>
-                                </li><li class="nav-item mb-1 mr-3">
-                                    <a href="#">
-                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
-                                    </a>
-                                </li><li class="nav-item mb-1 mr-3">
-                                    <a href="#">
-                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
-                                    </a>
-                                </li><li class="nav-item mb-1 mr-3">
-                                    <a href="#">
-                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
-                                    </a>
-                                </li><li class="nav-item mb-1 mr-3">
-                                    <a href="#">
-                                        <img src="../assets/img/subnautica-icon.jpg" class="bg-on-dark img-fluid opacity-75 disable-select" alt="Subnautica Icon" width="42px">
-                                    </a>
-                                </li>
                                 <li class="nav-item mb-1 opacity-75 pr-3">
                                     <a href="#" class="btn btn-secondary img-round p-0 m-0"><span class="material-icons p-2">add</span></a>
                                 </li>
