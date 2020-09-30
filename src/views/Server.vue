@@ -3,7 +3,7 @@
 
     <confirmation-modal v-show="isConfirmationModalVisible" @close="closeConfirmationModal" @stop-server="toggleServer()"/>
 
-    <main role="main" class="col-md-9 col-lg-9 ml-auto px-4 overflow-hidden">
+    <main role="main" class="col-md-12 mr-auto px-4 overflow-hidden">
         <transition name="server-fade" mode="out-in">
 
         <div class="server-start-page" key="1" v-if="!this.isServerStarted">

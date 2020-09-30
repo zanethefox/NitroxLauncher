@@ -9,10 +9,10 @@
         />
 
     <div id="nav">
-      <nav class="col-md-3 d-md-block sidebar disable-select p-0">
-        <div class="sidebar-sticky d-flex align-items-start flex-column">
-          <ul class="nav w-100 flex-column mb-auto px-3">
-            <li class="nav-item p-4 mb-3">
+      <nav class="col-md-12 d-md-block sidebar sidebar-main disable-select p-0">
+        <div class="d-flex align-items-start">
+          <ul class="nav w-100 flex-row mb-auto px-3 pt-4 pb-2">
+            <li class="nav-item px-4 pt-2">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315.71 65.52" width="92px" fill="white" class="nitrox-logo">
                 <title>Nitrox</title>
                 <g id="Layer_2" data-name="Layer 2">
@@ -39,28 +39,21 @@
             </li>
             <li class="nav-item mb-1">
               <router-link to="/" class="nav-link">
-                <span class="material-icons">sports_esports</span>
                 <span class="h-small">Play game</span>
               </router-link>
             </li>
             <li class="nav-item mb-1">
               <router-link to="/server" class="nav-link">
-                <span class="material-icons">memory</span>
                 <span class="h-small">Server</span>
               </router-link>
             </li>
             <li class="nav-item mb-1">
               <router-link to="/news" class="nav-link">
-                <svg width="24px" height="24px" viewBox="0 0 24 24">
-                  <path fill="currentColor"
-                    d="M20,11H4V8H20M20,15H13V13H20M20,19H13V17H20M11,19H4V13H11M20.33,4.67L18.67,3L17,4.67L15.33,3L13.67,4.67L12,3L10.33,4.67L8.67,3L7,4.67L5.33,3L3.67,4.67L2,3V19A2,2 0 0,0 4,21H20A2,2 0 0,0 22,19V3L20.33,4.67Z" />
-                </svg>
                 <span class="h-small">News</span>
               </router-link>
             </li>
             <li class="nav-item mb-1" >
               <a class="nav-link" @click="showSettingsModal">
-                <span class="material-icons">settings</span>
                 <span class="h-small">Settings</span>
               </a>
             </li>
