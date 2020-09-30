@@ -5,7 +5,7 @@
 
     <main role="main" class="col-md-9 p-0 no-scrollbar" style="margin-top: 120px!important; height: calc(100vh - 120px);">
         <div class="profiles pl-4 pr-4 pt-0">
-            <div class="profile-switcher pl-3 pr-1">
+            <div class="profile-switcher pl-3 pr-0">
                 <nav class="col-md-12 d-md-block disable-select p-0 mt-0 rounded-lg bg-material-3 shadow-lg" style="z-index:105">
                         <div class="d-flex align-items-start py-1">
                             <ul class="nav w-100 flex-row mb-auto px-3 pt-2 pb-1">
@@ -13,13 +13,19 @@
                                     <h6 class="pt-0 mb-1 text-uppercase size-11">Profiles</h6>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <img src="../assets/img/subnautica-icon.jpg" class="mr-4 img-fluid rounded-lg disable-select" alt="Subnautica Icon" width="42px">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="mr-3 img-fluid rounded-lg disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <img src="../assets/img/subnautica-icon.jpg" class="mr-4 img-fluid img-round offline opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="mr-3 img-fluid img-round offline opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
                                 </li>
                                 <li class="nav-item mb-1">
-                                    <img src="../assets/img/subnautica-icon.jpg" class="mr-4 img-fluid img-round offline opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    <a href="#">
+                                        <img src="../assets/img/subnautica-icon.jpg" class="mr-3 img-fluid img-round offline opacity-75 disable-select" alt="Subnautica Icon" width="42px">
+                                    </a>
                                 </li>
                                 <li class="nav-item mb-1 opacity-75">
                                     <a href="#" class="btn btn-secondary img-round p-0 m-0"><span class="material-icons p-2">add</span></a>
