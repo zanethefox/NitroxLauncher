@@ -6,12 +6,12 @@
     <main role="main" class="col-md-9 mr-auto pl-4 overflow-hidden">
         <transition name="server-fade" mode="out-in">
 
-        <div class="server-start-page" key="1" v-if="!this.isServerStarted">
-            <div class="row px-3">
+        <div class="server-start-page align-self-center my-auto" key="1" v-if="!this.isServerStarted">
+            <div class="row">
                 <!-- Header -->
-                <div class="col-md-12 text-center pt-2">
-                    <div class="py-4">
-                        <h2 class="font-weight-bold">Nitrox server</h2>
+                <div class="col-md-12 text-center">
+                    <div class="pb-4">
+                        <h2 class="font-weight-bold mt-n5">Nitrox server</h2>
                         <p class="opacity-75 mt-3">Welcome to your Subnautica multiplayer server!</p>
                     </div>
                 </div>
