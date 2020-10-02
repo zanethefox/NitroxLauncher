@@ -2,7 +2,7 @@
 <div class="news">
 
     <main role="main" class="col-md-9 mr-auto px-4">
-        <div class="row px-3">
+        <div class="row pl-3">
             <div class="col-md-12">
 
                 <template v-if="!error">
