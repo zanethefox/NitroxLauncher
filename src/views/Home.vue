@@ -3,6 +3,9 @@
 
     <launch-game-modal v-show="isLaunchGameModalVisible" @close="closeLaunchGameModal" />
 
+    <profile-modal v-show="isProfileModalVisible" @close="closeProfileModal" />
+
+
     <main role="main" class="col-md-9 p-0 no-scrollbar">
         <div class="profiles pl-4 pr-3 pt-0 sticky-top nav-scroller">
             <div class="profile-switcher pl-3 pr-0">
@@ -23,7 +26,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item mb-1 opacity-75 pr-3">
-                                    <a href="#" class="btn btn-secondary ripple img-round p-0 m-0"><span class="material-icons p-2">add</span></a>
+                                    <button type="button" class="btn btn-secondary ripple img-round p-0 m-0" @click="showProfileModal"><span class="material-icons p-2">add</span></button>
                                 </li>
                             </ul>
                         </div>
@@ -169,16 +172,19 @@ const {
 } = require('electron');
 
 import LaunchGameModal from '@/components/LaunchGameModal.vue';
+import ProfileModal from '@/components/ProfileModal.vue';
 
 export default {
     name: 'Home',
     components: {
         LaunchGameModal,
+        ProfileModal,
     },
     data() {
         return {
             isSettingsModalVisible: false,
             isLaunchGameModalVisible: false,
+            isProfileModalVisible: false,
             x: 0,
             y: 0,
         };
@@ -192,6 +198,12 @@ export default {
         },
         closeLaunchGameModal() {
             this.isLaunchGameModalVisible = false;
+        },
+        showProfileModal() {
+            this.isProfileModalVisible = true;
+        },
+        closeProfileModal() {
+            this.isProfileModalVisible = false;
         },
         openExternalBrowser(link) {
             remote.shell.openExternal(link);

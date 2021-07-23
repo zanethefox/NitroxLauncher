@@ -87,15 +87,15 @@
                                 <span class="login steam p-4">
                                     <img src="../assets/img/login/steam.svg" alt="Steam" width="24px">
                                 </span>
-                                <span>
+                                <span style="top: 3px">
                                     Continue with Steam
                                 </span>
                             </button>
                             <button class="btn btn-secondary login btn-lg text-uppercase btn-block button-fancy text-left font-14 font-weight-bold py-3" id="button-fancy-2" v-on:mousemove="updateCoordinates2">
                                 <span class="login epic p-4">
-                                    <img src="../assets/img/login/epic.png" alt="Epic" height="24px" style="margin: 0 2px;">
+                                    <img src="../assets/img/login/epic.png" alt="Epic" height="24px" style="margin: 0 1.5px;">
                                 </span>
-                                <span>
+                                <span style="top: 3px">
                                     Continue with Epic
                                 </span>
                             </button>

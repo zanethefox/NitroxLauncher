@@ -728,6 +728,7 @@ main {
 
 .sidebar .nav-link {
     cursor: pointer;
+    transition: all ease-in-out .1s;
 }
 
 .modal .sidebar .nav-link.active {

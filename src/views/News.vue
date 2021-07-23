@@ -53,7 +53,7 @@
                       <div class="text-center align-self-center mt-5 pt-5">
                           <h3 class="font-400 pt-5">Something went wrong</h3>
                           <p class="opacity-75">Check your internet connection and try again.</p>
-                          <button type="button" name="button" class="btn btn-primary px-4 font-16 mt-4" @click="loadPosts()">Retry</button>
+                          <button type="button" name="button" class="btn btn-primary ripple px-4 font-16 mt-4" @click="loadPosts()">Retry</button>
                       </div>
                     </div>
 
